@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>TDD Exercise 4.2 - Checkstyle report</title>
+    <link>http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration</link>
+    <description>TDD Exercise 4.2 - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
+    <item>
+      <title>File: 11,
+             Errors: 130,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestIdGenerator.java">com/programmingchronicles/tdd/addressbook/TestIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  17
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.UUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/UUIDIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestUUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestUUIDIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestGlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/TestGlobalAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  21
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.domain.TestContact.java">com/programmingchronicles/tdd/domain/TestContact.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestIncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestIncrementIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  38
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-4-2-tdd-iteration/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

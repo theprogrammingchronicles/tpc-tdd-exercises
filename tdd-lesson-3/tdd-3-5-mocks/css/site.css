@@ -1,0 +1,77 @@
+/*
+ * Copyright (C) 2010-2011, Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+ *
+ * This file is part of The Programming Chronicles Test-Driven Development
+ * Exercises(http://theprogrammingchronicles.com/)
+ *
+ * This copyrighted material is free software: you can redistribute it
+ * and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This material is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this material. This copy is available in LICENSE-GPL.txt
+ * file. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/* 
+  Author     : Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+  Description:
+    Sobrescribe algunos estilos de la documentación de maven
+    para el default-skin.
+*/
+body, td, select, input, li {
+  font-size: large;
+}
+
+p {
+  font-size: large;
+}
+
+#bannerLeft {
+  font-size: xx-large;
+  font-weight: bold;
+  color: #000000;
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: #e8e1dc;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-bottom-style: solid;
+  border-top-style: solid;
+  border-right-width: 1px;
+  border-left-width: 1px;
+  border-bottom-width: 1px;
+  border-top-width: 1px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 4px;
+  padding-top: 4px;
+  margin-right: 1px;
+  margin-left: 1px;
+  margin-bottom: 1px;
+  margin-top: 1px;
+}
+
+#navcolumn li {
+  font-size: medium;
+  line-height:1.2em;
+  list-style-position:outside;
+  list-style-type:none;
+}
+
+#bodyColumn {
+  margin-left:250px;
+}
+
+#leftColumn {
+  width:230px;
+}
+
+#breadcrumbs {
+  font-size: small;
+}

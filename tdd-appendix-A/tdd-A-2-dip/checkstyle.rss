@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>TDD Appendix A.2 - Checkstyle report</title>
+    <link>http://theprogrammingchronicles.com/tdd-A-2-dip</link>
+    <description>TDD Appendix A.2 - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
+    <item>
+      <title>File: 10,
+             Errors: 86,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.RandomIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/RandomIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestGlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/TestGlobalAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  26
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.MemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/MemAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.FakeAddressBook.java">com/programmingchronicles/tdd/addressbook/support/FakeAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.DbAddressBook.java">com/programmingchronicles/tdd/addressbook/support/DbAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  11
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-A-2-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

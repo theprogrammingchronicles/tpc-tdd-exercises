@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>TDD Exercise 6.6.C - Persistence Layer - Checkstyle report</title>
+    <link>http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer</link>
+    <description>TDD Exercise 6.6.C - Persistence Layer - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
+    <item>
+      <title>File: 9,
+             Errors: 415,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.AddressBookDao.java">com/programmingchronicles/tdd/data/AddressBookDao.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.ParameterMapper.java">com/programmingchronicles/tdd/data/template/ParameterMapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  4
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.ColumnMapper.java">com/programmingchronicles/tdd/data/template/ColumnMapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  7
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.SQLDaoException.java">com/programmingchronicles/tdd/data/SQLDaoException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  5
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.JdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/JdbcDaoTemplate.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  68
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.support.JdbcAddressBookDao.java">com/programmingchronicles/tdd/data/support/JdbcAddressBookDao.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  41
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.support.TestJdbcAdressBookDAO.java">com/programmingchronicles/tdd/data/support/TestJdbcAdressBookDAO.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  192
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.TestJdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/TestJdbcDaoTemplate.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  85
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.PreparedCallback.java">com/programmingchronicles/tdd/data/template/PreparedCallback.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

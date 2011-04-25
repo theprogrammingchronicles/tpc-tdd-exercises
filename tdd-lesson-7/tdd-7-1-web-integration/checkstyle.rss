@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<rss version="0.91">
+  <channel>
+    <title>TDD Exercise 7.1 - Checkstyle report</title>
+    <link>http://theprogrammingchronicles.com/tdd-7-1-web-integration</link>
+    <description>TDD Exercise 7.1 - Checkstyle report</description>
+    <language>en-us</language>
+    <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
+    <item>
+      <title>File: 11,
+             Errors: 378,
+             Warnings: 0,
+             Infos: 0
+      </title>
+            <link>http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html</link>
+      <description>
+        <p>Click <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html">here</a> for the full Checkstyle report.</p>
+
+        <table summary="Files" boder="1">
+          <thead>
+            <tr>
+              <th>Files</th>
+              <th style="width:30px;"><abbr title="Info">I</abbr></th>
+              <th style="width:30px;"><abbr title="Warning">W</abbr></th>
+              <th style="width:30px;"><abbr title="Error">E</abbr></th>
+            </tr>
+          </thead>
+          <tbody>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletResponse.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletResponse.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  75
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/TestServicesConfigurationContextListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  13
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.AddContactController.java">com/programmingchronicles/tdd/web/addressbook/AddContactController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  44
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.addressbook.converters.ContactCommandConverter.java">com/programmingchronicles/addressbook/converters/ContactCommandConverter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  30
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeRequestDispatcher.java">com/programmingchronicles/tdd/testing/web/FakeRequestDispatcher.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletRequest.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletRequest.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  85
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/ServicesConfigurationContextListener.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  12
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestAddContactController.java">com/programmingchronicles/tdd/web/addressbook/TestAddContactController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  37
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.converters.TestContactCommandConverter.java">com/programmingchronicles/tdd/web/addressbook/converters/TestContactCommandConverter.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/ShowContactsController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  28
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="http://theprogrammingchronicles.com/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/TestShowContactsController.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  18
+                </td>
+              </tr>
+                      </tbody>
+        </table>
+        
+      </description>
+    </item>
+  </channel>
+</rss>
+

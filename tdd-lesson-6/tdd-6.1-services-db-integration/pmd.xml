@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd version="4.2.5" timestamp="2011-04-25T03:59:25.685">
+<file name="D:\workspace\tdd-course\exercises\tdd-lesson-6\tdd-6-1-services-db-based\src\main\java\com\programmingchronicles\tdd\addressbook\support\DbAddressBook.java">
+<violation beginline="26" endline="26" begincolumn="1" endcolumn="73" rule="UnusedImports" ruleset="Import Statement Rules" package="com.programmingchronicles.tdd.addressbook.support" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.programmingchronicles.tdd.addressbook.InvalidContactException'
+</violation>
+<violation beginline="27" endline="27" begincolumn="1" endcolumn="68" rule="UnusedImports" ruleset="Import Statement Rules" package="com.programmingchronicles.tdd.addressbook.support" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
+Avoid unused imports such as 'com.programmingchronicles.tdd.addressbook.InvalidIdException'
+</violation>
+<violation beginline="70" endline="70" begincolumn="25" endcolumn="35" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" variable="idGenerator" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
+Avoid unused private fields such as 'idGenerator'.
+</violation>
+<violation beginline="105" endline="105" begincolumn="12" endcolumn="15" rule="UnconditionalIfStatement" ruleset="Basic Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" method="getContact" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnconditionalIfStatement" priority="3">
+Do not use if statements that are always true or always false
+</violation>
+<violation beginline="141" endline="141" begincolumn="12" endcolumn="15" rule="UnconditionalIfStatement" ruleset="Basic Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" method="getAll" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnconditionalIfStatement" priority="3">
+Do not use if statements that are always true or always false
+</violation>
+<violation beginline="152" endline="152" begincolumn="12" endcolumn="15" rule="UnconditionalIfStatement" ruleset="Basic Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" method="deleteContact" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#UnconditionalIfStatement" priority="3">
+Do not use if statements that are always true or always false
+</violation>
+<violation beginline="158" endline="175" begincolumn="13" endcolumn="5" rule="UnusedFormalParameter" ruleset="Unused Code Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedFormalParameter" priority="3">
+Avoid unused method parameters such as 'checkedContact'.
+</violation>
+<violation beginline="158" endline="158" begincolumn="21" endcolumn="58" rule="UnusedPrivateMethod" ruleset="Unused Code Rules" package="com.programmingchronicles.tdd.addressbook.support" class="DbAddressBook" method="checkDuplicate" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateMethod" priority="3">
+Avoid unused private methods such as 'checkDuplicate(Contact)'.
+</violation>
+</file>
+</pmd>
