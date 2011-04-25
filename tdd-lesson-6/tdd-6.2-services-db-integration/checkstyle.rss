@@ -3,7 +3,7 @@
 <rss version="0.91">
   <channel>
     <title>TDD Exercise 6.2 - Checkstyle report</title>
-    <link>http://theprogrammingchronicles.com/tdd-6.2-services-db-integration</link>
+    <link>http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration</link>
     <description>TDD Exercise 6.2 - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
@@ -13,9 +13,9 @@
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html</link>
+            <link>http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html</link>
       <description>
-        <p>Click <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.data.AddressBookDao.java">com/programmingchronicles/tdd/data/AddressBookDao.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.data.AddressBookDao.java">com/programmingchronicles/tdd/data/AddressBookDao.java</a>
                 </td>
                 <td>
                   0
@@ -43,7 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.UUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/UUIDIdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.UUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/UUIDIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -57,7 +57,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -71,7 +71,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.MemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/MemAddressBook.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.MemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/MemAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -85,7 +85,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestDbAddressBook.java">com/programmingchronicles/tdd/addressbook/support/TestDbAddressBook.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestDbAddressBook.java">com/programmingchronicles/tdd/addressbook/support/TestDbAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -99,7 +99,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -113,7 +113,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestIdGenerator.java">com/programmingchronicles/tdd/addressbook/TestIdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestIdGenerator.java">com/programmingchronicles/tdd/addressbook/TestIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -127,7 +127,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestMemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/TestMemAddressBook.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestMemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/TestMemAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -141,7 +141,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -155,7 +155,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestUUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestUUIDIdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestUUIDIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestUUIDIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -169,7 +169,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
                 </td>
                 <td>
                   0
@@ -183,7 +183,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.domain.TestContact.java">com/programmingchronicles/tdd/domain/TestContact.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.domain.TestContact.java">com/programmingchronicles/tdd/domain/TestContact.java</a>
                 </td>
                 <td>
                   0
@@ -197,7 +197,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.DbAddressBook.java">com/programmingchronicles/tdd/addressbook/support/DbAddressBook.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.DbAddressBook.java">com/programmingchronicles/tdd/addressbook/support/DbAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -211,7 +211,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestIncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestIncrementIdGenerator.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.TestIncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/TestIncrementIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -225,7 +225,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
                 </td>
                 <td>
                   0
@@ -239,7 +239,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidContactException.java">com/programmingchronicles/tdd/addressbook/InvalidContactException.java</a>
+                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6.2-services-db-integration/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidContactException.java">com/programmingchronicles/tdd/addressbook/InvalidContactException.java</a>
                 </td>
                 <td>
                   0
