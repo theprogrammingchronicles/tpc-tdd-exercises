@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ The Programming Chronicles Test-Driven Development Exercises
+  ~ (http://theprogrammingchronicles.com/)
+  ~
+  ~ Copyright (C) 2010-2011, Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+  ~ or third-party contributors as indicated by the @author tags or express
+  ~ copyright attribution statements applied by the authors. All third-party
+  ~ contributions are distributed under license by Pedro Ballesteros.
+  ~
+  ~ This copyrighted material is free software: you can redistribute it
+  ~ and/or modify it under the terms of the GNU General Public License as
+  ~ published by the Free Software Foundation, either version 3 of the
+  ~ License, or (at your option) any later version.
+  ~
+  ~ This material is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~ GNU General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU General Public License
+  ~ along with this material. This copy is available in LICENSE-GPL.txt
+  ~ file. If not, see <http://www.gnu.org/licenses/>.
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.programmingchronicles.tdd</groupId>
+    <artifactId>tdd-exercises</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>tdd-lesson-1</artifactId>
+  <packaging>pom</packaging>
+
+  <name>TDD Lesson 1</name>
+  <description>
+        My First Unit Test
+  </description>
+  <url>http://theprogrammingchronicles.com/</url>
+  <inceptionYear>2010</inceptionYear>
+
+  <organization>
+    <name>The Programming Chronicles</name>
+    <url>http://theprogrammingchronicles.com/</url>
+  </organization>
+
+  <licenses>
+    <license>
+      <name>GNU General Public License Version 3</name>
+      <url>http://www.gnu.org/licenses/gpl-3.0-standalone.html</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <developers>
+    <developer>
+      <id>pmbh</id>
+      <name>Pedro Ballesteros</name>
+      <email>pedro@theprogrammingchronicles.com</email>
+      <url>http://theprogrammingchronicles.com/</url>
+    </developer>
+  </developers>
+
+  <modules>
+    <module>tdd-1-1-firstunittest</module>
+    <module>tdd-1-2-firstunittest</module>
+    <module>tdd-1-3-firstunittest</module>
+    <module>tdd-1-4-testcoverage</module>
+    <module>tdd-1-5-testcoverage</module>
+  </modules>
+
+</project>
+

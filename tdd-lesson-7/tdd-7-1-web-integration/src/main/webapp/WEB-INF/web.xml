@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+ ~ Copyright (C) 2010-2011, Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+ ~
+ ~ This file is part of The Programming Chronicles Test-Driven Development
+ ~ Exercises(http://theprogrammingchronicles.com/)
+ ~
+ ~ This copyrighted material is free software: you can redistribute it
+ ~ and/or modify it under the terms of the GNU General Public License as
+ ~ published by the Free Software Foundation, either version 3 of the
+ ~ License, or (at your option) any later version.
+ ~
+ ~ This material is distributed in the hope that it will be useful,
+ ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ ~ GNU General Public License for more details.
+ ~
+ ~ You should have received a copy of the GNU General Public License
+ ~ along with this material. This copy is available in LICENSE-GPL.txt
+ ~ file. If not, see <http://www.gnu.org/licenses/>.
+-->
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+    <display-name>Wiki Agenda</display-name>
+    <!-- Un listener de contexto es el que se encargará de configurar la
+       implementación concreta de los servicios que usarán los controladores,
+       ya que no se puede usar Dependency Injection -->
+    <listener>
+        <description>Services Configuration</description>
+        <listener-class>com.programmingchronicles.tdd.web.addressbook.ServicesConfigurationContextListener</listener-class>
+    </listener>
+    <!-- El descriptor de despliegue del servlet configura las vistas -->
+    <servlet>
+        <description>Controlador para la creación de nuevos contactos.</description>
+        <servlet-name>AddContactController</servlet-name>
+        <servlet-class>com.programmingchronicles.tdd.web.addressbook.AddContactController</servlet-class>
+        <init-param>
+            <param-name>formView</param-name>
+            <param-value>/WEB-INF/views/addcontactform.jsp</param-value>
+        </init-param>
+        <init-param>
+            <param-name>successedSubmitRedirect</param-name>
+            <param-value>show.do</param-value>
+        </init-param>
+    </servlet>
+    <!-- El descriptor de despliegue del servlet configura las vistas -->
+    <servlet>
+        <description>Controlador que muestra la lista de contactos completa</description>
+        <servlet-name>ShowContactsController</servlet-name>
+        <servlet-class>com.programmingchronicles.tdd.web.addressbook.ShowContactsController</servlet-class>
+        <init-param>
+            <param-name>view</param-name>
+            <param-value>/WEB-INF/views/showcontactsview.jsp</param-value>
+        </init-param>
+    </servlet>
+    <!-- Cada controlador se mapea como una operación -->
+    <servlet-mapping>
+        <servlet-name>AddContactController</servlet-name>
+        <url-pattern>/contactlist/addcontact.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ShowContactsController</servlet-name>
+        <url-pattern>/contactlist/show.do</url-pattern>
+    </servlet-mapping>
+    <!-- La página por defecto mejor realiza una redirección en el navegador
+       ya que aparecerá con el path "/" que dificulta el uso de path relativos -->
+    <welcome-file-list>
+        <welcome-file>/homeredirect.jsp</welcome-file>
+    </welcome-file-list>
+    <!-- Página de error generica para cualquier excepción que se
+       propaga fuera de los servlets. Puede ser cualquier recurso
+       del contenedor, incluso servlets. -->
+    <error-page>
+        <error-code>500</error-code>
+        <location>/unexpectederror.jsp</location>
+    </error-page>
+</web-app>

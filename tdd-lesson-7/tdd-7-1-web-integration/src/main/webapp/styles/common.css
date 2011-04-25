@@ -1,0 +1,116 @@
+/*
+ * Copyright (C) 2010-2011, Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+ *
+ * This file is part of The Programming Chronicles Test-Driven Development
+ * Exercises(http://theprogrammingchronicles.com/)
+ *
+ * This copyrighted material is free software: you can redistribute it
+ * and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This material is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this material. This copy is available in LICENSE-GPL.txt
+ * file. If not, see <http://www.gnu.org/licenses/>.
+*/
+
+/*
+  Author: Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+  Description:
+*/
+body, td, div, p, a, font, span {
+    font-family: arial, sans-serif;
+    margin: 0;
+}
+
+body {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+
+div.banner, h1 {
+  border: 1px solid #C3D9FF;
+  background-color: #E0ECFF;
+  padding: 0.5ex;
+}
+
+div.banner {
+  margin-top: 1ex;
+}
+
+h1 {
+  font-family: arial;
+  font-size: 110%;
+}
+
+.fotter {
+  font-size: 80%;
+  text-align: center;
+  position: fixed;
+  bottom: 4ex;
+  left: 2em;
+  right: 2em;
+}
+
+.actions {
+    color: #2A5DB0;
+    font-size: 80%;
+    font-weight: bold;
+    padding: 1ex;
+    margin-bottom: 1ex;
+    text-decoration: underline;
+    cursor: pointer;
+} 
+
+.actions a {
+    color: #2A5DB0;
+}
+
+table.contacts {
+    border-spacing: 0;
+    border-collapse: collapse;
+    padding: 0;
+    table-layout: fixed;
+    width: 100%;
+}
+
+tr.contacts {
+    cursor: pointer;
+}
+
+td.contacts {
+    border-bottom: 1px solid #D6D6D6;
+    padding: 2px 6px 0 3px;
+    padding-bottom: 1px;
+    empty-cells: show;
+    font-size: 80%;
+    height: 3.25ex;
+    overflow: hidden;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+td.headers {
+   font-size: 100%;
+   font-weight: bold;
+   border-bottom: 2px solid #D6D6D6;
+   border-top: 2px solid #D6D6D6;
+   background-color: #e8eefa;
+}
+
+col.firstname {
+    width: 20em;
+}
+
+col.birthday {
+    width: 25em;
+}
+
+.formerror {
+    color: red;
+}

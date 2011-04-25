@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.programmingchronicles.tdd</groupId>
+    <artifactId>tdd-lesson-3</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>tdd-3-7-mocks</artifactId>
+
+  <name>TDD Exercise 3.7</name>
+  <description>
+        Isolated Unit Test vs Integration Small Scaled Test
+  </description>
+
+  <developers>
+    <developer>
+      <id>pmbh</id>
+      <name>Pedro Ballesteros</name>
+      <email>pedro@theprogrammingchronicles.com</email>
+      <url>http://theprogrammingchronicles.com/</url>
+    </developer>
+  </developers>
+
+  <build>
+    <plugins>
+      <plugin>
+        <!-- Añade como root source del compiler los tests de integración,
+             pero solo durante la fase "pre-integration-test" -->
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>build-helper-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>add-source</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>add-test-source</goal>
+              <!-- TRICK: Se añade tambien a los fuentes de compilación
+                   para que se puedan ver bien en el Netbeans IDE. Parece que
+                   la integración con maven tiene sus fallos. -->
+              <goal>add-source</goal>
+            </goals>
+            <configuration>
+              <sources>
+                <source>src/itest/java</source>
+              </sources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <!-- Fase pre-integration-test: se compilan los tests
+             de integración desde la carpeta itest -->
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>integration-test-compile</id>
+            <phase>pre-integration-test</phase>
+            <goals>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!--
+           Ejecuta los tests de integración en la fase "integration-test" y
+           los verifica en "verify" antes del "install".
+
+               NOTA:
+               La diferencia de failsafe con surefire es que busca tests
+               con el patron IT, y falla en el verify permitiendo la ejecución
+               del post-integration-test para liberar recursos de integración.
+       -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>integration-test</id>
+            <goals>
+              <goal>integration-test</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>verify</id>
+            <goals>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <!-- Para generar los informes de integración con el comando "site"
+           se debe lanzar la fase "verify" durante "pre-site"
+       -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-invoker-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>preparing-integration-test-report</id>
+            <phase>pre-site</phase>
+            <goals>
+              <goal>run</goal>
+            </goals>
+            <configuration>
+              <pom>${basedir}/pom.xml</pom>
+              <noLog>true</noLog>
+              <goals>
+                <goal>verify</goal>
+              </goals>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+  </build>
+    
+  <reporting>
+    <plugins>
+      <!-- Añade el informe de los tests de integración usando el generador
+           de informe de surefire, pero leyendo los resultados generados
+           por failsafe. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-report-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <id>integration-test-report</id>
+            <reports>
+              <report>report-only</report>
+            </reports>
+            <configuration>
+              <outputName>failsafe-report</outputName>
+              <reportsDirectories>
+                <reportsDirectory>target/failsafe-reports</reportsDirectory>
+              </reportsDirectories>
+            </configuration>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!-- Mockito solo se usa en TESTS
+         IMPORTANTE: test scope -->
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>

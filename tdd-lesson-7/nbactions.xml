@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Site Stage</actionName>
+            <displayName>Site Stage</displayName>
+            <goals>
+                <goal>site:stage</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Site Deploy</actionName>
+            <displayName>Site Deploy</displayName>
+            <goals>
+                <goal>site:deploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Site-Deploy</actionName>
+            <displayName>Site-Deploy</displayName>
+            <goals>
+                <goal>site-deploy</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Solo site</actionName>
+            <displayName>Solo site</displayName>
+            <goals>
+                <goal>site</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-staging</actionName>
+            <displayName>staging</displayName>
+            <goals>
+                <goal>mvn</goal>
+                <goal>site:stage</goal>
+                <goal>-DstagingDirectory=docs</goal>
+            </goals>
+        </action>
+    </actions>

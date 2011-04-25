@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.programmingchronicles.tdd</groupId>
+    <artifactId>tdd-lesson-7</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>tdd-7-2-web-integration</artifactId>
+  <packaging>pom</packaging>
+
+  <name>TDD Exercise 7.2</name>
+  <description>
+        Automated Integration Tests - Web Applications
+  </description>
+
+  <developers>
+    <developer>
+      <id>pmbh</id>
+      <name>Pedro Ballesteros</name>
+      <email>pedro@theprogrammingchronicles.com</email>
+      <url>http://theprogrammingchronicles.com/</url>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <!-- Proyecto con la aplicaición web que se va a probar -->
+    <dependency>
+      <groupId>com.programmingchronicles.tdd</groupId>
+      <artifactId>tdd-7-1-web-integration</artifactId>
+      <version>${project.version}</version>
+      <type>war</type>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>net.sourceforge.htmlunit</groupId>
+      <artifactId>htmlunit</artifactId>
+      <version>2.7</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.0.1</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+    <!-- Para los despliegues se usará el plugin "cargo" que soporta
+         varios contenedores, y varias opciones. Para el caso de tomcat
+         se podría usar el plugin "tomcat" o directamente copiar los war -->
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.cargo</groupId>
+          <artifactId>cargo-maven2-plugin</artifactId>
+          <version>1.0</version>
+        </plugin>
+      </plugins>
+    </pluginManagement>
+
+    <!--
+        Como se está utilizando un "pom pàckaging" se construye un lifecycle
+        a medida que ejecutará lo siguiente:
+
+            initialize    -> Desplegar de nuevo el war de la aplicación.
+            test-compile  -> Compilar las clases junit
+            test          -> Ejecutar los test de integración con junit
+
+        NOTA: Se podría hacer el undeploy del war al terminar, pero ya
+              se deja desplegado para pruebas manuales.
+
+        NOTA: El plugin cargo también soporta la instalación, arranque,
+              ejecución embebida, parada, etc. de los servidores de aplicaciones.
+     -->
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.cargo</groupId>
+        <artifactId>cargo-maven2-plugin</artifactId>
+        <configuration>
+          <wait>false</wait>
+          <!-- Configura las aplicaciones que se van a desplegar -->
+          <deployer>
+            <deployables>
+              <deployable>
+                <groupId>com.programmingchronicles.tdd</groupId>
+                <artifactId>tdd-6-1-web-integration</artifactId>
+                <type>war</type>
+                <properties>
+                  <context>tdd-6-1-web-integration</context>
+                </properties>
+              </deployable>
+            </deployables>
+          </deployer>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>testCompile</goal>
+              <goal>compile</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <executions>
+          <execution>
+            <phase>test</phase>
+            <goals>
+              <goal>test</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+
+  <profiles>
+    <!-- Perfil de despliegue en un tomcat de desarrollo, que debe
+         estar arrancado y funcionando. Este es el perfil por defecto -->
+    <profile>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      <id>development</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.cargo</groupId>
+            <artifactId>cargo-maven2-plugin</artifactId>
+            <executions>
+              <execution>
+                <!-- Despliega el war según en el contenedor configurado -->
+                <phase>initialize</phase>
+                <goals>
+                  <goal>redeploy</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <!-- Se utiliza el tipo remote en lugar de installed ya
+                   que para tomcat no se soporta el undeploy en local -->
+              <container>
+                <type>remote</type> <!-- installed, embedded, remote -->
+                <containerId>tomcat6x</containerId>
+                <!-- Por defecto se usa localhost 8080 -->
+              </container>
+
+              <configuration>
+                <type>runtime</type> <!-- standalone, existing and runtime -->
+                <properties>
+                  <cargo.remote.username>tomcat</cargo.remote.username>
+                  <cargo.remote.password>tomcat</cargo.remote.password>
+                </properties>
+              </configuration>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+</project>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.programmingchronicles.tdd</groupId>
+    <artifactId>tdd-lesson-5</artifactId>
+    <version>1.0-SNAPSHOT</version>
+  </parent>
+
+  <artifactId>tdd-5-8-web</artifactId>
+  <packaging>war</packaging>
+
+  <name>TDD Exercise 5.8</name>
+  <description>
+        Container Mocks Libraries - Spring Test Utilities
+  </description>
+
+  <developers>
+    <developer>
+      <id>pmbh</id>
+      <name>Pedro Ballesteros</name>
+      <email>pedro@theprogrammingchronicles.com</email>
+      <url>http://theprogrammingchronicles.com/</url>
+    </developer>
+  </developers>
+
+  <dependencies>
+    <!-- Dependencias de la capa de negocio o servicios -->
+    <dependency>
+      <groupId>com.programmingchronicles.tdd</groupId>
+      <artifactId>tdd-5-5-services-refactoring</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+        
+        <!-- Servlet API: Incluída en Tomcat. SCOPE: Provided -->
+    <dependency>
+      <groupId>javax.servlet</groupId>
+      <artifactId>servlet-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-all</artifactId>
+      <scope>test</scope>
+    </dependency>
+
+    <!--
+         El proyecto no está basado en Spring Framework, solo se usa una
+         de sus librerías de testing.
+
+         Se incluye como test scope y por tanto ni siquiera se incluirá
+         en el WAR.
+
+         Hay que tener en cuenta que Spring es un conjunto de utilidades,
+         no es sólo MVC, IoC, AOP, etc, es un conjunto de todo eso y más.
+    -->
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>2.5.6</version>
+      <scope>test</scope>
+    </dependency>
+        
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-core</artifactId>
+      <version>2.5.6</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+</project>
+
