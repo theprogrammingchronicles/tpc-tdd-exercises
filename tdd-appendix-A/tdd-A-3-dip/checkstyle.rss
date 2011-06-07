@@ -3,19 +3,19 @@
 <rss version="0.91">
   <channel>
     <title>TDD Appendix A.3 - Checkstyle report</title>
-    <link>http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip</link>
+    <link>${project.url}</link>
     <description>TDD Appendix A.3 - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
     <item>
       <title>File: 9,
-             Errors: 85,
+             Errors: 77,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html</link>
+            <link>${project.url}/checkstyle.html</link>
       <description>
-        <p>Click <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,21 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.RandomIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/RandomIdGenerator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  4
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.RandomIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/RandomIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -57,63 +43,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  5
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestGlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/TestGlobalAddressBook.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  28
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.MemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/MemAddressBook.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  22
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.FakeAddressBook.java">com/programmingchronicles/tdd/addressbook/support/FakeAddressBook.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  7
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.GlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/GlobalAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -127,7 +57,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator.java">com/programmingchronicles/tdd/addressbook/support/IncrementIdGenerator.java</a>
                 </td>
                 <td>
                   0
@@ -136,12 +66,12 @@
                   0
                 </td>
                 <td>
-                  11
+                  4
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-appendix-A/tdd-A-3-dip/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.TestGlobalAddressBook.java">com/programmingchronicles/tdd/addressbook/TestGlobalAddressBook.java</a>
                 </td>
                 <td>
                   0
@@ -150,7 +80,77 @@
                   0
                 </td>
                 <td>
-                  3
+                  28
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.MemAddressBook.java">com/programmingchronicles/tdd/addressbook/support/MemAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  21
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.support.FakeAddressBook.java">com/programmingchronicles/tdd/addressbook/support/FakeAddressBook.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.InvalidIdException.java">com/programmingchronicles/tdd/addressbook/InvalidIdException.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  1
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.domain.Contact.java">com/programmingchronicles/tdd/domain/Contact.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  10
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.addressbook.IdGenerator.java">com/programmingchronicles/tdd/addressbook/IdGenerator.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  2
                 </td>
               </tr>
                       </tbody>

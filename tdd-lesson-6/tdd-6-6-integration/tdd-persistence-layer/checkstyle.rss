@@ -3,19 +3,19 @@
 <rss version="0.91">
   <channel>
     <title>TDD Exercise 6.6.C - Persistence Layer - Checkstyle report</title>
-    <link>http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer</link>
+    <link>${project.url}</link>
     <description>TDD Exercise 6.6.C - Persistence Layer - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
     <item>
       <title>File: 9,
-             Errors: 415,
+             Errors: 408,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html</link>
+            <link>${project.url}/checkstyle.html</link>
       <description>
-        <p>Click <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.AddressBookDao.java">com/programmingchronicles/tdd/data/AddressBookDao.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.AddressBookDao.java">com/programmingchronicles/tdd/data/AddressBookDao.java</a>
                 </td>
                 <td>
                   0
@@ -38,12 +38,40 @@
                   0
                 </td>
                 <td>
-                  7
+                  6
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.ParameterMapper.java">com/programmingchronicles/tdd/data/template/ParameterMapper.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.template.ParameterMapper.java">com/programmingchronicles/tdd/data/template/ParameterMapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  3
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.template.ColumnMapper.java">com/programmingchronicles/tdd/data/template/ColumnMapper.java</a>
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  0
+                </td>
+                <td>
+                  6
+                </td>
+              </tr>
+                          <tr>
+                <td>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.SQLDaoException.java">com/programmingchronicles/tdd/data/SQLDaoException.java</a>
                 </td>
                 <td>
                   0
@@ -57,7 +85,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.ColumnMapper.java">com/programmingchronicles/tdd/data/template/ColumnMapper.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.template.JdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/JdbcDaoTemplate.java</a>
                 </td>
                 <td>
                   0
@@ -66,12 +94,12 @@
                   0
                 </td>
                 <td>
-                  7
+                  67
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.SQLDaoException.java">com/programmingchronicles/tdd/data/SQLDaoException.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.support.JdbcAddressBookDao.java">com/programmingchronicles/tdd/data/support/JdbcAddressBookDao.java</a>
                 </td>
                 <td>
                   0
@@ -80,40 +108,12 @@
                   0
                 </td>
                 <td>
-                  5
+                  40
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.JdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/JdbcDaoTemplate.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  68
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.support.JdbcAddressBookDao.java">com/programmingchronicles/tdd/data/support/JdbcAddressBookDao.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  41
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.support.TestJdbcAdressBookDAO.java">com/programmingchronicles/tdd/data/support/TestJdbcAdressBookDAO.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.support.TestJdbcAdressBookDAO.java">com/programmingchronicles/tdd/data/support/TestJdbcAdressBookDAO.java</a>
                 </td>
                 <td>
                   0
@@ -127,7 +127,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.TestJdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/TestJdbcDaoTemplate.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.template.TestJdbcDaoTemplate.java">com/programmingchronicles/tdd/data/template/TestJdbcDaoTemplate.java</a>
                 </td>
                 <td>
                   0
@@ -136,12 +136,12 @@
                   0
                 </td>
                 <td>
-                  85
+                  84
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-6/tdd-6-6-integration/tdd-persistence-layer/checkstyle.html#com.programmingchronicles.tdd.data.template.PreparedCallback.java">com/programmingchronicles/tdd/data/template/PreparedCallback.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.data.template.PreparedCallback.java">com/programmingchronicles/tdd/data/template/PreparedCallback.java</a>
                 </td>
                 <td>
                   0

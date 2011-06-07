@@ -3,19 +3,19 @@
 <rss version="0.91">
   <channel>
     <title>TDD Exercise 7.1 - Checkstyle report</title>
-    <link>http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration</link>
+    <link>${project.url}</link>
     <description>TDD Exercise 7.1 - Checkstyle report</description>
     <language>en-us</language>
     <copyright>&#169;2010 - 2011 The Programming Chronicles</copyright>
     <item>
       <title>File: 11,
-             Errors: 378,
+             Errors: 371,
              Warnings: 0,
              Infos: 0
       </title>
-            <link>http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html</link>
+            <link>${project.url}/checkstyle.html</link>
       <description>
-        <p>Click <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html">here</a> for the full Checkstyle report.</p>
+        <p>Click <a href="${project.url}/checkstyle.html">here</a> for the full Checkstyle report.</p>
 
         <table summary="Files" boder="1">
           <thead>
@@ -29,7 +29,7 @@
           <tbody>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletResponse.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletResponse.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletResponse.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletResponse.java</a>
                 </td>
                 <td>
                   0
@@ -38,12 +38,12 @@
                   0
                 </td>
                 <td>
-                  75
+                  74
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/TestServicesConfigurationContextListener.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/TestServicesConfigurationContextListener.java</a>
                 </td>
                 <td>
                   0
@@ -57,7 +57,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.AddContactController.java">com/programmingchronicles/tdd/web/addressbook/AddContactController.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.AddContactController.java">com/programmingchronicles/tdd/web/addressbook/AddContactController.java</a>
                 </td>
                 <td>
                   0
@@ -71,7 +71,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.addressbook.converters.ContactCommandConverter.java">com/programmingchronicles/addressbook/converters/ContactCommandConverter.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.addressbook.converters.ContactCommandConverter.java">com/programmingchronicles/addressbook/converters/ContactCommandConverter.java</a>
                 </td>
                 <td>
                   0
@@ -80,12 +80,12 @@
                   0
                 </td>
                 <td>
-                  30
+                  29
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeRequestDispatcher.java">com/programmingchronicles/tdd/testing/web/FakeRequestDispatcher.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeRequestDispatcher.java">com/programmingchronicles/tdd/testing/web/FakeRequestDispatcher.java</a>
                 </td>
                 <td>
                   0
@@ -94,12 +94,12 @@
                   0
                 </td>
                 <td>
-                  18
+                  17
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletRequest.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletRequest.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.testing.web.FakeHttpServletRequest.java">com/programmingchronicles/tdd/testing/web/FakeHttpServletRequest.java</a>
                 </td>
                 <td>
                   0
@@ -108,12 +108,12 @@
                   0
                 </td>
                 <td>
-                  85
+                  84
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/ServicesConfigurationContextListener.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ServicesConfigurationContextListener.java">com/programmingchronicles/tdd/web/addressbook/ServicesConfigurationContextListener.java</a>
                 </td>
                 <td>
                   0
@@ -122,12 +122,12 @@
                   0
                 </td>
                 <td>
-                  12
+                  11
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestAddContactController.java">com/programmingchronicles/tdd/web/addressbook/TestAddContactController.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestAddContactController.java">com/programmingchronicles/tdd/web/addressbook/TestAddContactController.java</a>
                 </td>
                 <td>
                   0
@@ -141,7 +141,7 @@
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.converters.TestContactCommandConverter.java">com/programmingchronicles/tdd/web/addressbook/converters/TestContactCommandConverter.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.converters.TestContactCommandConverter.java">com/programmingchronicles/tdd/web/addressbook/converters/TestContactCommandConverter.java</a>
                 </td>
                 <td>
                   0
@@ -150,12 +150,12 @@
                   0
                 </td>
                 <td>
-                  18
+                  17
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/ShowContactsController.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.ShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/ShowContactsController.java</a>
                 </td>
                 <td>
                   0
@@ -164,12 +164,12 @@
                   0
                 </td>
                 <td>
-                  28
+                  27
                 </td>
               </tr>
                           <tr>
                 <td>
-                  <a href="http://theprogrammingchronicles.com/tdd-lesson-7/tdd-7-1-web-integration/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/TestShowContactsController.java</a>
+                  <a href="${project.url}/checkstyle.html#com.programmingchronicles.tdd.web.addressbook.TestShowContactsController.java">com/programmingchronicles/tdd/web/addressbook/TestShowContactsController.java</a>
                 </td>
                 <td>
                   0
