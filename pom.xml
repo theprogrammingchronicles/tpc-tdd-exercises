@@ -34,12 +34,11 @@
   <description>
         Test-Driven Development - Exercises &amp; examples
   </description>
-  <url>http://theprogrammingchronicles.com/</url>
   <inceptionYear>2010</inceptionYear>
 
   <organization>
     <name>The Programming Chronicles</name>
- 
+ 		<url>http://theprogrammingchronicles.com/</url>
   </organization>
 
   <licenses>
