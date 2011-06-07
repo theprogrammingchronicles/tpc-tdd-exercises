@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-06-07T08:46:25.452">
+<pmd version="4.2.5" timestamp="2011-06-07T12:51:40.402">
 <file name="D:\workspace\tpc-tdd-exercises\tdd-lesson-4\tdd-4-2-tdd-iteration\src\main\java\com\programmingchronicles\tdd\domain\Contact.java">
 <violation beginline="33" endline="33" begincolumn="20" endcolumn="21" rule="UnusedPrivateField" ruleset="Unused Code Rules" package="com.programmingchronicles.tdd.domain" class="Contact" variable="id" externalInfoUrl="http://pmd.sourceforge.net/rules/unusedcode.html#UnusedPrivateField" priority="3">
 Avoid unused private fields such as 'id'.

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-06-07T08:50:02.529">
+<pmd version="4.2.5" timestamp="2011-06-07T13:33:54.954">
 <file name="D:\workspace\tpc-tdd-exercises\tdd-lesson-6\tdd-6-3-persistence\src\main\java\com\programmingchronicles\tdd\data\support\JdbcAddressBookDao.java">
 <violation beginline="32" endline="32" begincolumn="1" endcolumn="31" rule="UnusedImports" ruleset="Import Statement Rules" package="com.programmingchronicles.tdd.data.support" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'java.util.logging.Level'

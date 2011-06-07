@@ -1,5 +1,5 @@
 -classpath
-'D:/workspace/tpc-tdd-exercises/tdd-lesson-6/tdd-6-1-services-db-based/target/classes;D:/workspace/tpc-tdd-exercises/tdd-lesson-6/tdd-6-1-services-db-based/target/test-classes;C:/Users/pmbh/.m2/repository/org/mockito/mockito-all/1.8.4/mockito-all-1.8.4.jar;C:/Users/pmbh/.m2/repository/junit/junit/4.4/junit-4.4.jar'
+'D:/workspace/tpc-tdd-exercises/tdd-lesson-6/tdd-6-1-services-db-based/target/classes;D:/workspace/tpc-tdd-exercises/tdd-lesson-6/tdd-6-1-services-db-based/target/test-classes;C:/Documents and Settings/pmbh/.m2/repository/org/mockito/mockito-all/1.8.4/mockito-all-1.8.4.jar;C:/Documents and Settings/pmbh/.m2/repository/junit/junit/4.4/junit-4.4.jar'
 -encoding
 'UTF-8'
 -package

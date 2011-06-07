@@ -1,5 +1,5 @@
 -classpath
-'D:/workspace/tpc-tdd-exercises/tdd-lesson-3/tdd-3-4-mocks/target/classes;D:/workspace/tpc-tdd-exercises/tdd-lesson-3/tdd-3-4-mocks/target/test-classes;C:/Users/pmbh/.m2/repository/junit/junit/4.4/junit-4.4.jar'
+'D:/workspace/tpc-tdd-exercises/tdd-lesson-3/tdd-3-4-mocks/target/classes;D:/workspace/tpc-tdd-exercises/tdd-lesson-3/tdd-3-4-mocks/target/test-classes;C:/Documents and Settings/pmbh/.m2/repository/junit/junit/4.4/junit-4.4.jar'
 -encoding
 'UTF-8'
 -package

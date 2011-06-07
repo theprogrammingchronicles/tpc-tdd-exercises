@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-06-07T08:49:30.399">
+<pmd version="4.2.5" timestamp="2011-06-07T13:33:20.533">
 <file name="D:\workspace\tpc-tdd-exercises\tdd-lesson-6\tdd-6-1-services-db-based\src\main\java\com\programmingchronicles\tdd\addressbook\support\DbAddressBook.java">
 <violation beginline="26" endline="26" begincolumn="1" endcolumn="73" rule="UnusedImports" ruleset="Import Statement Rules" package="com.programmingchronicles.tdd.addressbook.support" externalInfoUrl="http://pmd.sourceforge.net/rules/imports.html#UnusedImports" priority="4">
 Avoid unused imports such as 'com.programmingchronicles.tdd.addressbook.InvalidContactException'

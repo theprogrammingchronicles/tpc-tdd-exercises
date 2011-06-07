@@ -16,8 +16,6 @@
 'UTF-8'
 -doctitle
 'TDD Exercise 3.6 1.0-SNAPSHOT API'
--link
-'http://download.oracle.com/javase/6/docs/api'
 -use
 -version
 -windowtitle
