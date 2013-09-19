@@ -1,0 +1,120 @@
+/*
+ * Copyright (C) 2010-2011, Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+ *
+ * This file is part of The Programming Chronicles Test-Driven Development
+ * Exercises(http://theprogrammingchronicles.com/)
+ *
+ * This copyrighted material is free software: you can redistribute it
+ * and/or modify it under the terms of the GNU General Public License as
+ * published by the Free Software Foundation, either version 3 of the
+ * License, or (at your option) any later version.
+ *
+ * This material is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this material. This copy is available in LICENSE-GPL.txt
+ * file. If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/* 
+  Author     : Pedro Ballesteros <pedro@theprogrammingchronicles.com>
+  Description:
+    Sobrescribe algunos estilos de la documentación de maven
+    para el default-skin.
+*/
+body, td, select, input, li {
+	font-family: Verdana, Arial, "Helvetica Neue", sans-serif;
+  font-size: 15px;
+}
+
+#bannerLeft {
+  font-size: xx-large;
+  font-weight: bold;
+  color: white;
+  background-color: #21966B;
+  border: 1px solid;
+  padding: 4px;
+ 	margin: 1px;
+}
+
+h1, h4 {
+	background-color: white;
+	color: #088652;
+}
+
+h2, h3 {
+	background-color: #21966B;
+	color: white;
+}
+
+p {
+  font-size: 15px;
+}
+
+#leftColumn {
+  width:230px;
+	background-color: #E7E7DE;
+}
+
+#navcolumn {
+	padding: 0px;
+}
+
+#navcolumn h5 {
+		background-color: #21966B;
+		color: white;
+		padding-bottom: 2px;
+}
+
+#navcolumn li {
+	font-size: 12px;
+  line-height: 1.2em;
+  list-style-position: outside;
+  list-style-type: none;
+	padding: 0px;
+}
+
+#navcolumn li strong {
+  display: block;
+	padding-left: 16px;
+	color: black;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#navcolumn li a {
+	display: block;
+	padding-left: 16px;
+	color: black;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+#navcolumn li a:hover {
+	background-color: #E7F7EF;
+}
+
+#navcolumn li a:visited {
+
+}
+
+#navcolumn li li a {
+	padding-left: 32px;
+}
+
+#navcolumn li li strong {
+	padding-left: 32px;
+}
+
+#bodyColumn {
+  margin-left:250px;
+}
+
+#breadcrumbs {
+  font-size: small;
+	color: white;
+	background-color: #088652;
+}

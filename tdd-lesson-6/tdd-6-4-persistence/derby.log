@@ -1,0 +1,6 @@
+----------------------------------------------------------------
+2013-09-19 21:25:34.816 GMT:
+ Booting Derby version The Apache Software Foundation - Apache Derby - 10.5.3.0 - (802917): instance a816c00e-0141-381d-1f6d-000002e3b418
+on database directory memory:D:\tdd-course\tpc-tdd-exercises\tdd-lesson-6\tdd-6-4-persistence\myInMemDB  
+
+Database Class Loader started - derby.database.classpath=''
