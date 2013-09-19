@@ -1,3 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd version="4.2.5" timestamp="2011-06-07T13:34:15.783">
+<pmd version="4.3" timestamp="2013-09-19T23:25:48.478">
+<file name="D:\tdd-course\tpc-tdd-exercises\tdd-lesson-6\tdd-6-5-dao-template-pattern\src\main\java\com\programmingchronicles\tdd\data\support\JdbcAddressBookDao.java">
+<violation beginline="113" endline="113" begincolumn="50" endcolumn="62" rule="AvoidThreadGroup" ruleset="Basic Rules" package="com.programmingchronicles.tdd.data.support" class="JdbcAddressBookDao" method="mapParameters" externalInfoUrl="http://pmd.sourceforge.net/rules/basic.html#AvoidThreadGroup" priority="3">
+Avoid using java.lang.ThreadGroup; it is not thread safe
+</violation>
+</file>
 </pmd>
