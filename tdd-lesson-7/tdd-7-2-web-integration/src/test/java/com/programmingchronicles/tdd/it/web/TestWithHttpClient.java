@@ -21,16 +21,10 @@
 
 package com.programmingchronicles.tdd.it.web;
 
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpRequest;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -39,12 +33,12 @@ import static org.junit.Assert.*;
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestWithHttpClient {
-    
+
 
     @Test
     public void testShowContacts() throws Exception {
         HttpClient httpClient = new DefaultHttpClient();
-        HttpGet getRequest = new HttpGet("http://localhost:8080/tdd-6-1-web-integration-1.0/contactlist/show.do");
+        HttpGet getRequest = new HttpGet("http://localhost:8080/tdd-7-1-web-integration-1.0/contactlist/show.do");
         HttpResponse response = httpClient.execute(getRequest);
 
         assertEquals(200, response.getStatusLine().getStatusCode());
