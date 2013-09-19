@@ -95,7 +95,7 @@ public class TestDbAddressBook {
 
     // Conexión utilizada en los tests, se utiliza una conexión por test
     // para hacer la prueba de integración más realista.
-    private Connection connection;  
+    private Connection connection;
 
     @BeforeClass
     public static void setUpClass() throws SQLException {
@@ -104,7 +104,7 @@ public class TestDbAddressBook {
 
     @AfterClass
     public static void tearDownClass() throws SQLException {
-        //
+        dropTables();
     }
 
     @Before
@@ -135,7 +135,7 @@ public class TestDbAddressBook {
         // Despues de cada test se realiza un rollback para conservar
         // la independencia entre los tests.
         try {
-            connection.rollback();                               
+            connection.rollback();
         } finally {
             // Como se crea una conexión en cada test se debe realizar el
             // close de la conexión.
@@ -157,7 +157,7 @@ public class TestDbAddressBook {
         assertEquals(1, contacts.size());
         assertEquals(contactId, contacts.get(0).getId());
         assertEquals("Pedro", contacts.get(0).getFirstName());
-    } 
+    }
 
     @Test
     public void testAddAndGetFullContact() throws ParseException, SQLException {
@@ -186,7 +186,7 @@ public class TestDbAddressBook {
         } catch (InvalidIdException ex) {
             assertTrue(true);
         }
-    }    
+    }
 
     @Test
     public void testAddWithoutFirstName() {

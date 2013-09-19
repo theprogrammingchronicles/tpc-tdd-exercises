@@ -24,6 +24,7 @@ package com.programmingchronicles.tdd.it.utils;
 import java.sql.*;
 import java.util.Map;
 import java.util.Properties;
+import java.util.concurrent.Executor;
 import javax.sql.DataSource;
 import static org.mockito.Mockito.*;
 
@@ -31,7 +32,7 @@ import static org.mockito.Mockito.*;
  * Clase que proporciona utilidades de soporte a los tests de
  *
  * <p><b>Refactorización:</b>Se ha extraído desde la clase de test para
- * hacer el código más legible
+ * hacer el código más legible.
  *
  * En este caso ya se trabaja con una base de datos física, que podría estar
  * incluso en una máquina remota.
@@ -48,7 +49,7 @@ import static org.mockito.Mockito.*;
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
-public class DatabaseTestSupport {    
+public class DatabaseTestSupport {
 
     // Para el ejemplo se utiliza un driver de base de datos embebida, pero
     // se podría cambiar por un driver de cliente para el acceso al sistema
@@ -57,7 +58,17 @@ public class DatabaseTestSupport {
 
     // Los test de integración accederán a una base de datos física de
     // desarrollo o de tests. En este ejemplo la base de datos está embebida.
-    private static final String URL_CONNECTION = "jdbc:derby:dev-databases";
+    private static final String URL_CONNECTION = "jdbc:derby:dev-databases;create=true";
+
+    private static final String SQL_CREATE_CONTACT_TABLE =
+            "CREATE TABLE CONTACTS ("
+            + "ID INT NOT NULL GENERATED ALWAYS AS IDENTITY, "
+            + "FIRSTNAME VARCHAR(255), "
+            + "SURNAME VARCHAR(255), "
+            + "BIRTHDAY DATE, "
+            + "PHONE VARCHAR(255))";
+
+    private static final String SQL_DROP_CONTACT_TABLE = "DROP TABLE CONTACTS";
 
     static {
         // Inicialización del driver de la base de datos.
@@ -74,25 +85,6 @@ public class DatabaseTestSupport {
             System.out.println(ex.getSQLState());
             throw ex;
         }
-           /*   Connection conn = newConnection();
-        try {
-           final String SQL_CREATE_CONTACT_TABLE =
-            "CREATE TABLE CONTACTS ("
-            + "ID INT NOT NULL GENERATED ALWAYS AS IDENTITY, "
-            + "FIRSTNAME VARCHAR(255), "
-            + "SURNAME VARCHAR(255), "
-            + "BIRTHDAY DATE, "
-            + "PHONE VARCHAR(255))"; *
-
-            Statement stm = conn.createStatement();
-            try {
-                stm.execute(SQL_CREATE_CONTACT_TABLE);
-            } finally {
-                stm.close();
-            }
-        } finally {
-            conn.close();
-        } */
     }
 
     /**
@@ -152,7 +144,21 @@ public class DatabaseTestSupport {
                 stm.execute(SQL_CREATE_CONTACT_TABLE);
             } finally {
                 stm.close();
+            }
+        } finally {
+            conn.close();
+        }
     }
+
+    public static void dropTables() throws SQLException {
+        Connection conn = newConnection();
+        try {
+            Statement stm = conn.createStatement();
+            try {
+                stm.execute(SQL_DROP_CONTACT_TABLE);
+            } finally {
+                stm.close();
+            }
         } finally {
             conn.close();
         }
@@ -445,6 +451,32 @@ abstract class ConnectionWrapper implements Connection {
 
     @Override
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return isWrapperFor(iface);
+        return connection.isWrapperFor(iface);
     }
+
+    @Override
+    public void setSchema(String schema) throws SQLException {
+        connection.setSchema(schema);
+    }
+
+    @Override
+    public String getSchema() throws SQLException {
+        return connection.getSchema();
+    }
+
+    @Override
+    public void abort(Executor executor) throws SQLException {
+        connection.abort(executor);
+    }
+
+    @Override
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+        connection.setNetworkTimeout(executor, milliseconds);
+    }
+
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return connection.getNetworkTimeout();
+    }
+
 }

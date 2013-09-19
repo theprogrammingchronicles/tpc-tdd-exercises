@@ -38,6 +38,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.concurrent.Executor;
 import org.mockito.invocation.InvocationOnMock;
 import org.mockito.stubbing.Answer;
 import static org.junit.Assert.*;
@@ -182,7 +183,7 @@ public class TestJdbcAdressBookDAO {
         final Connection nonTransactionalConnection = new ConnectionWrapper(connection) {
             // El close actualiza el contador de conexiones del test.
             @Override
-            public void close() throws SQLException {  
+            public void close() throws SQLException {
                 openConnections--;
             }
 
@@ -196,7 +197,7 @@ public class TestJdbcAdressBookDAO {
 
             @Override
             public void setAutoCommit(boolean autoCommit) throws SQLException {
-            }            
+            }
         };
 
         // Crea un stub de un datasource que devuelve el wrapper de la conexión.
@@ -232,9 +233,9 @@ public class TestJdbcAdressBookDAO {
      * @throws SQLException
      */
     @Before
-    public void setUp() throws SQLException {        
+    public void setUp() throws SQLException {
         // Contacto por defecto usado en las pruebas.
-        expectedContact = new Contact();               
+        expectedContact = new Contact();
 
         // Crea el Object Under Test configurado con el stub del datasource.
         dao = new JdbcAddressBookDao();
@@ -292,7 +293,7 @@ public class TestJdbcAdressBookDAO {
         List<Contact> contacts = dao.getAll();
         assertEquals(1, contacts.size());
         assertEquals(contactId, contacts.get(0).getId());
-        assertEquals("Pedro", contacts.get(0).getFirstName());       
+        assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
     /**
@@ -404,7 +405,7 @@ public class TestJdbcAdressBookDAO {
  * @return
  * @throws SQLException
  */
-abstract class ConnectionWrapper implements Connection {
+ abstract class ConnectionWrapper implements Connection {
     private Connection connection;
 
     public ConnectionWrapper(Connection connection) {
@@ -653,6 +654,32 @@ abstract class ConnectionWrapper implements Connection {
 
     @Override
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return isWrapperFor(iface);
+        return connection.isWrapperFor(iface);
     }
+
+     @Override
+     public void setSchema(String schema) throws SQLException {
+         connection.setSchema(schema);
+     }
+
+     @Override
+     public String getSchema() throws SQLException {
+         return connection.getSchema();
+     }
+
+     @Override
+     public void abort(Executor executor) throws SQLException {
+         connection.abort(executor);
+     }
+
+     @Override
+     public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+         connection.setNetworkTimeout(executor, milliseconds);
+     }
+
+     @Override
+     public int getNetworkTimeout() throws SQLException {
+         return connection.getNetworkTimeout();
+     }
+
 }

@@ -47,6 +47,7 @@ import static org.junit.Assert.*;
 import static org.junit.matchers.JUnitMatchers.*;
 import static org.mockito.Mockito.*;
 import static com.programmingchronicles.tdd.data.support.IsContactEqual.*;
+import java.util.concurrent.Executor;
 
 /**
  * Test de una implementación AddressBookDao basada en JDBC.
@@ -86,7 +87,7 @@ public class TestJdbcAdressBookDAO {
     private JdbcAddressBookDao dao;
 
     // Contacto por defecto usado en los tests
-    private Contact expectedContact;  
+    private Contact expectedContact;
 
     /**
      * Inicializaciones comunes para todos los test (Fixture de Clase).
@@ -155,7 +156,7 @@ public class TestJdbcAdressBookDAO {
     /**
      * Crea un stub del datasource que devuelve siempre un wrapper de la conexión
      * entregada, que ignora las transacciones y el cierre de conexión, para que
-     * los tests puedan realizar el rollback de las modificaciones.          
+     * los tests puedan realizar el rollback de las modificaciones.
      *
      * @see ConnectionWrapper
      *
@@ -198,7 +199,7 @@ public class TestJdbcAdressBookDAO {
              .thenReturn(nonTransactionalConnection);
 
         return mockDatasource;
-    }    
+    }
 
     /**
      * Antes de cada test se inicia la transacción. Las tablas en la base
@@ -227,7 +228,7 @@ public class TestJdbcAdressBookDAO {
      * @throws SQLException
      */
     @After
-    public void tearDown() throws SQLException {       
+    public void tearDown() throws SQLException {
         connection.rollback();
     }
 
@@ -315,7 +316,7 @@ public class TestJdbcAdressBookDAO {
         JdbcDaoTemplate template = new JdbcDaoTemplate(mockDataSource);
         String sql = "SELECT ID, FIRSTNAME, SURNAME, BIRTHDAY, PHONE " +
                      "FROM CONTACTS";
-        List<Contact> contacts = template.query(sql, 
+        List<Contact> contacts = template.query(sql,
           new ColumnMapper<Contact>() {
             @Override
             public Contact mapColumns(ResultSet resultset) throws SQLException {
@@ -429,7 +430,7 @@ public class TestJdbcAdressBookDAO {
         c2.setId(id2);
 
         // Test
-        List<Contact> contacts = dao.getAll();       
+        List<Contact> contacts = dao.getAll();
 
         // Verifica que la lista contiene unicamente los dos contactos
         // existentes en la base de datos.
@@ -438,7 +439,7 @@ public class TestJdbcAdressBookDAO {
         // estan incluidos en la coleccion. Por lo que se necesita
         // usar el custom matcher "contactEq".
         assertEquals(2, contacts.size());
-        assertThat(contacts, hasItems(contactEq(c2), contactEq(c1)));      
+        assertThat(contacts, hasItems(contactEq(c2), contactEq(c1)));
     }
 
     /**
@@ -450,7 +451,7 @@ public class TestJdbcAdressBookDAO {
     public void testGetAllEmpty() throws SQLException {
         // Test
         List<Contact> contacts = dao.getAll();
-     
+
         assertEquals(0, contacts.size());
     }
 
@@ -492,7 +493,7 @@ public class TestJdbcAdressBookDAO {
         // un id invalido se debe comportar como si fuera un contacto
         // que no existe.
         Contact contact = dao.getContact("invalidId");
-        assertNull(contact);        
+        assertNull(contact);
     }
 
     /**
@@ -514,7 +515,7 @@ public class TestJdbcAdressBookDAO {
         dao.deleteContact(expectedId);
 
         // Se intenta eliminar un contacto ya eliminado.
-        dao.deleteContact(expectedId);    
+        dao.deleteContact(expectedId);
     }
 
     /**
@@ -576,7 +577,7 @@ class IsContactEqual extends TypeSafeMatcher<Contact> {
                  equals(c1.getSurname(), c2.getSurname()) &&
                  equals(c1.getBirthday(), c2.getBirthday()) &&
                  equals(c1.getPhone(), c2.getPhone());
-        
+
         if(!ignoreId) {
             result = result && equals(c1.getId(), c2.getId());
         }
@@ -907,6 +908,32 @@ abstract class ConnectionWrapper implements Connection {
 
     @Override
     public boolean isWrapperFor(Class<?> iface) throws SQLException {
-        return isWrapperFor(iface);
+        return connection.isWrapperFor(iface);
     }
+
+    @Override
+    public void setSchema(String schema) throws SQLException {
+        connection.setSchema(schema);
+    }
+
+    @Override
+    public String getSchema() throws SQLException {
+        return connection.getSchema();
+    }
+
+    @Override
+    public void abort(Executor executor) throws SQLException {
+        connection.abort(executor);
+    }
+
+    @Override
+    public void setNetworkTimeout(Executor executor, int milliseconds) throws SQLException {
+        connection.setNetworkTimeout(executor, milliseconds);
+    }
+
+    @Override
+    public int getNetworkTimeout() throws SQLException {
+        return connection.getNetworkTimeout();
+    }
+    
 }

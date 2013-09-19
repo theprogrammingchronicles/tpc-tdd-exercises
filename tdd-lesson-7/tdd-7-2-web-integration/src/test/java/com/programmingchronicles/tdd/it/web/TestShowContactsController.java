@@ -23,11 +23,6 @@ package com.programmingchronicles.tdd.it.web;
 
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import java.io.IOException;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -43,17 +38,16 @@ public class TestShowContactsController {
     @Test
     public void testShowContacts() throws Exception {
         WebClient webClient = new WebClient();
-        HtmlPage page = webClient.getPage("http://localhost:8080/tdd-6-1-web-integration-1.0/contactlist/show.do");
+        HtmlPage page = webClient.getPage("http://localhost:8080/tdd-7-1-web-integration-1.0/contactlist/show.do");
 
         assertEquals("Wikiagenda", page.getTitleText());
 
         String pageAsXml = page.asXml();
-        assertTrue(pageAsXml.contains("<body class=\"composite\">"));
+        assertTrue(pageAsXml.contains("<table class=\"contacts\">"));
 
         String pageAsText = page.asText();
-        assertTrue(pageAsText.contains("Support for the HTTP and HTTPS protocols"));
+        assertTrue(pageAsText.contains("Bienvenido a Wikiagenda"));
 
-
-        page.getDocumentElement("submit").click();
+        // page.getElementById("submit").click();
     }
 }
