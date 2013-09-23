@@ -45,12 +45,17 @@ public class TestCalculator {
      * claro de los informes de cobertura de test generados por la herramienta
      * <a href="http://cobertura.sourceforge.net/">cobertura</a> al ejecutar el
      * lifecycle <i>"site"</i> de Maven.
+     *
+     * Si se corrige el metodo "add" se arreglan ambos tests dando por valída
+     * la clase. El problema es  que este test es erroneo ya que esta testeando
+     * tambien´el metodo "add". El informe de covertura nos puede ayudar a
+     * detectar tests con falsos positivos como este.
      */
     @Test
     public void testSubtract() {
         Calculator calculator = new Calculator();
 
         int result = calculator.add(50, 20);
-        assertEquals(30, result);
+        assertEquals(70, result);
     }
 }
