@@ -18,7 +18,6 @@
  * along with this material. This copy is available in LICENSE-GPL.txt
  * file. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.programmingchronicles.tdd.horoscope;
 
 import java.util.Calendar;
@@ -29,8 +28,10 @@ import java.util.Locale;
  * Implementación del horoscopo que mide la suerte en función del
  * día de nacimiento.
  * <p>
- * <b>NOTA</b>: Se ha implementado de forma un tanto extraña para explicar
- *              algunos conceptos de unit testing.
+ * <b>NOTA</b>:
+ *    Se ha extraído parte de la expresión lógica en "isJanuaryChristmas"
+ *    para mostrar conceptos de "branch coverage". La ejecucion de todas
+ *    las ramas de un "if" no implica que se haya ejecutado todo el código.
  * </p>
  *
  * <u>IMPLEMENTACION</u>:
@@ -101,7 +102,7 @@ public class Horoscope {
 
         } else if(month == 12 || month <= 2) {
            // Invierto
-           if((month==12 && day >= 25) || isJanuaryChristmas(day, month)) {
+           if((month==12 && day >= 25) || (month==1 && day <= 6)) {
               // Navidad
               luck = 9;
            } else {
@@ -112,10 +113,10 @@ public class Horoscope {
         }
     }
 
-    // Metodo auxiliar que decide si es un día de navidad
-    // del mes de febrero (no tengo ni idea de porque se
-    // ha extraido esta condición de los ifs :)
-    private boolean isJanuaryChristmas(int day, int month) {
+    // Metodo auxiliar que decide si es un día de navidad del mes de febrero
+    // (no tengo ni idea de porque extrae esta condición del if :), pero
+    // permite explicar la idea de branch coverage.
+    /*private boolean isJanuaryChristmas(int day, int month) {
         return month==1 && day <= 6;
-    }
+    }*/
 }

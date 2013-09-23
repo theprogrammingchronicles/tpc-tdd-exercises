@@ -18,10 +18,8 @@
  * along with this material. This copy is available in LICENSE-GPL.txt
  * file. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.programmingchronicles.tdd.horoscope;
 
-import com.programmingchronicles.tdd.horoscope.Horoscope;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -71,7 +69,7 @@ import static org.junit.Assert.*;
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestHoroscope {
-    Horoscope horoscope = new Horoscope();    
+    Horoscope horoscope = new Horoscope();
 
     @Test
     public void testLuckSummerSunday() {
@@ -105,7 +103,7 @@ public class TestHoroscope {
         assertEquals(9, horoscope.getLuck());
     }
 
-  
+
     @Test
     public void testLuckChristmasAfterNewYear() {
         // El 2 de enero estamos en navidad
@@ -115,21 +113,20 @@ public class TestHoroscope {
 
         assertEquals(9, horoscope.getLuck());
     }
+
     /**
      * Los meses se inicializan en el cambio de año. Para la navidad hay que
      * probar los dos años.
      *
      * <p>
-     * Ver antes la desactivación de {@link #testLuckOtherDays() }</p>
+     * Desactivar este test implica una perdida de cobertura en la evaluación
+     * de expresiones de un condicional en lugar lineas de codigo (branch
+     * coverage).</p>
      *
      * <p>
-     * En este caso, si desactivamos este test vemos que se pierde
-     * cobertura en la evaluación de expresiones de un condicional.</p>
-     *
-     * <p>
-     * En este caso la cobertura se pierde en una expresión que es
-     * una llamada a un método privado, con lo causamos también
-     * una perdida de cobertura en las lineas ejecutadas.</p>
+     * Se puede ver más claro si se descomenta el método "isJanuaryChristmas"
+     * y cambiar el if testeado para ver la perdida de cobertura en forma
+     * de lineas en lugar de ramas.
      *
      * <code> if((month==12 && day >= 25) || isJanuaryChristmas(day, month)) </code>
      */
@@ -141,8 +138,8 @@ public class TestHoroscope {
         horoscope.makePretictions(birthday);
 
         assertEquals(6, horoscope.getLuck());
-    } 
-   
+    }
+
     @Test
     public void testLuckWinterAfterNewYear() {
         // El 8 de enero ya terminaron las vacaciones.
@@ -179,5 +176,5 @@ public class TestHoroscope {
         horoscope.makePretictions(birthday);
 
         assertEquals(1, horoscope.getLuck());
-    } 
+    }
 }

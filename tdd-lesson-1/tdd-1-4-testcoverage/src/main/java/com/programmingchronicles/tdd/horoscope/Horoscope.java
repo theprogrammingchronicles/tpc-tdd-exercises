@@ -29,9 +29,6 @@ import java.util.Locale;
  * Implementación del horoscopo que mide la suerte en función del
  * día de nacimiento.
  * <p>
- * <b>NOTA</b>: Se ha implementado de forma un tanto extraña para explicar
- *              algunos conceptos de unit testing.
- * </p>
  *
  * <u>IMPLEMENTACION</u>:
  * <pre>
@@ -51,7 +48,7 @@ import java.util.Locale;
  *
  * - El resto del año la suerte es 1.
  * </pre>
- * 
+ *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class Horoscope {
@@ -101,7 +98,7 @@ public class Horoscope {
 
         } else if(month == 12 || month <= 2) {
            // Invierto
-           if((month==12 && day >= 25) || isJanuaryChristmas(day, month)) {
+           if((month==12 && day >= 25) || (month==1 && day <= 6)) {
               // Navidad
               luck = 9;
            } else {
@@ -112,10 +109,4 @@ public class Horoscope {
         }
     }
 
-    // Metodo auxiliar que decide si es un día de navidad
-    // del mes de febrero (no tengo ni idea de porque se
-    // ha extraido esta condición de los ifs :)
-    private boolean isJanuaryChristmas(int day, int month) {
-        return month==1 && day <= 6;
-    }
 }
