@@ -21,16 +21,15 @@
 
 package com.programmingchronicles.tdd.addressbook.support;
 
-import com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator;
-import com.programmingchronicles.tdd.addressbook.TestIdGenerator;
 import com.programmingchronicles.tdd.addressbook.IdGenerator;
+import com.programmingchronicles.tdd.addressbook.TestIdGenerator;
 
 import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
- * Test que dirigirá la implementación de un IdGenerator basado en
- * en el incremento de un atributo estatico.
+ * Test que dirige la implementación de un IdGenerator basado en
+ * la generación de UUIDs.
  *
  * <p>
  * <b>Refactorizado:</b><br/>
@@ -40,11 +39,11 @@ import static org.junit.Assert.*;
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
-public class TestIncrementIdGenerator extends TestIdGenerator {
+public class TestUUIDIdGenerator extends TestIdGenerator {
 
     @Override
     protected IdGenerator newIdGenerator() {
-        return new IncrementIdGenerator();
+        return new UUIDIdGenerator();
     }
 
     /**
@@ -52,7 +51,7 @@ public class TestIncrementIdGenerator extends TestIdGenerator {
      * y que no son genericos de la interfaz.
      */
     @Test
-    public void testNextSequentialId() {
+    public void testNewIdRealUUID() {
         fail("not implemented");
     }
 }

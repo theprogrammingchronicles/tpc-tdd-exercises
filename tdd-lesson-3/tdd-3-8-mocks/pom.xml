@@ -8,12 +8,12 @@
     <artifactId>tdd-lesson-4</artifactId>
     <version>1.0-SNAPSHOT</version>
   </parent>
-
-  <artifactId>tdd-4-1-tdd-iteration</artifactId>
-
-  <name>TDD Exercise 4.1</name>
+  
+  <artifactId>tdd-3-8-mocks</artifactId>
+  
+  <name>TDD Exercise 3.8</name>
   <description>
-        TDD driven by ATDD - Refactoring Tests Classes
+           Refactoring Tests Classes
   </description>
 
   <developers>

@@ -62,6 +62,7 @@
     <module>tdd-3-5-mocks</module>
     <module>tdd-3-6-mocks</module>
     <module>tdd-3-7-mocks</module>
+    <module>tdd-3-8-mocks</module>
   </modules>
 
 </project>
