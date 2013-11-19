@@ -44,7 +44,7 @@ ${project.name} - ${project.description}
       antes de haber implementado el test que la verifica.
 
       Es fácil incluso no darse cuenta y dejar finalmente código sin testear,
-      y en cualquier caso estaríamos usando TAD (Test Afeter Development).
+      y en cualquier caso estaríamos usando TAD (Test After Development).
 
     * Nueva funcionalidad que rompe tests ya existentes.
 
