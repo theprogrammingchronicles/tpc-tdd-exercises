@@ -29,7 +29,9 @@ ${project.name} - ${project.description}
 * TO DO:
 
      Modificar los tests para que puedan funcionar sin disponer aun
-     de la clase IdGenerator.
+     de la clase IdGenerator (el código de generación de ids se ha
+     eliminado de la clase y se supone que un IdGenerator que aun
+     no tenemos implementará esta funcionalidad).
 
      <<PROBLEMA>>: ¿Como se puede hacer que GlobalAddressBook utilice durante
                     los tests un Mock de IdGenerator sin incluir el Mock en

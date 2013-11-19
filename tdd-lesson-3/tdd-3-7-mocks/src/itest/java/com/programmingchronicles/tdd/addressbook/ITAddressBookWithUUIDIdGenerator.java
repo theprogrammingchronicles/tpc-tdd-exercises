@@ -93,10 +93,6 @@ public class ITAddressBookWithUUIDIdGenerator {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         Contact expectedContact = new Contact();
@@ -122,5 +118,5 @@ public class ITAddressBookWithUUIDIdGenerator {
             // vemos el objetivo de este test.
             assertTrue(true);
         }
-    }       
+    }
 }

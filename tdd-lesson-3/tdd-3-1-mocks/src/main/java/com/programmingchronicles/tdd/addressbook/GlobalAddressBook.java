@@ -35,7 +35,12 @@ import java.util.Map;
  * <b>Refactorización:</b><br/>
  *    Por un lado se decide que la generación de ids es una responsabilidad
  *    que no pertenece a GlobalAddressBook.<br/>
- *    Por otro lado extrayendo la funcionalidad se permite su reutilización.
+ *
+ *    Por otro lado extrayendo la funcionalidad se permite su reutilización.<br/>
+ *
+ *    El problema es que aun no disponemos de la clase "IdGenerator", por lo
+ *    tanto ¿que podemos hacer con el código funcional de esta clase y los tests
+ *    para seguir trabajando?.
  * </p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
@@ -47,7 +52,7 @@ public class GlobalAddressBook {
     // Acceso al servicio de generación de ids.
     // Problematica: ¿como sustituimos IdGenerator por un Mock?
 /*  private IdGenerator idGenerator = new IdGenerator(); */
-   
+
     /**
      * Añade un nuevo contacto devolviendo el id generado.
      *
@@ -58,8 +63,8 @@ public class GlobalAddressBook {
         throw new UnsupportedOperationException("Not yet implemented");
 
 /*      String id = idGenerator.newId();
-     
-        contact.setId(id);                
+
+        contact.setId(id);
         addressBookMap.put(id, contact);
         return id;
  */
@@ -86,7 +91,7 @@ public class GlobalAddressBook {
         Contact result = addressBookMap.get(contactId);
         if(result == null) {
            throw new InvalidIdException();
-        } 
+        }
         return result;
-    }   
+    }
 }

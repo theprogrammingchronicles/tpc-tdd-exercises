@@ -21,9 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
 import com.programmingchronicles.tdd.domain.Contact;
 import java.util.List;
 import org.junit.*;
@@ -53,17 +50,17 @@ public class TestGlobalAddressBook {
         // Principio de Independencia:
         //   Cada test tiene su propia instancia del Object Under Test y del Stub.
         addressBook = new GlobalAddressBook();
-       
+
         // Se crea el mock automaticamente usando mockito
         generatorMock = mock(IdGenerator.class);
-        
+
         // Se programan varias respuestas por defecto para nextId.
         when(generatorMock.newId()).thenReturn("1","2","3","4");
 
         // Configura el addressBook con el mock generado.
         addressBook.setIdGenerator(generatorMock);
     }
-        
+
     /**
      * Test que añade un contacto y se verifica obteniendo el contenido
      * actual de la agenda.
@@ -71,7 +68,7 @@ public class TestGlobalAddressBook {
     @Test
     public void testAddContact() {
         expectedContact.setFirstName("Pedro");
-        
+
         // Se puede sobreescribir la programación del stub con una
         // nueva respuesta si el test lo necesita.
         when(generatorMock.newId()).thenReturn("newId");
@@ -91,12 +88,8 @@ public class TestGlobalAddressBook {
         // mediante el IdGenerator, hace el test más dependiente de la
         // implementación.
         verify(generatorMock, times(1)).newId();
-    }        
+    }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         expectedContact.setFirstName("Pedro");
@@ -125,5 +118,5 @@ public class TestGlobalAddressBook {
             // vemos el objetivo de este test.
             assertTrue(true);
         }
-    }     
+    }
 }
