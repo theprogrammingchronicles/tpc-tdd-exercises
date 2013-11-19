@@ -69,7 +69,7 @@ import static org.junit.Assert.*;
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestHoroscope {
-    Horoscope horoscope = new Horoscope();
+    private Horoscope horoscope = new Horoscope();
 
     @Test
     public void testLuckSummerSunday() {
