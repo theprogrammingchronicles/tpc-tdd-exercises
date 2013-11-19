@@ -11,6 +11,12 @@ ${project.name} - ${project.description}
     Se obtiene una primera aproximación que posiblemente se tenga
     que refinar refactorizando.
 
+    Al implementar la funcionalidad de obtener un solo contacto se
+    identifican necesidades de implementación que no se mencionaban
+    en la especificación o tests de aceptación. La necesidad de que
+    cada contacto tenga un ID único asociado (vocabulario de la
+    implementación vs vocabulario del negocio).
+
     * <<IMPORTANTE>>
 
       Se implementa un servicio de agenda con almacenamiento en memoria. Esto
