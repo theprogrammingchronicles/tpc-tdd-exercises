@@ -58,8 +58,8 @@ import java.util.Locale;
 public class Horoscope {
     private static Calendar calendar = Calendar.getInstance(new Locale("es"));
 
-    SmartDateParser parser = new SmartDateParser();
-    int luck;
+    private SmartDateParser parser = new SmartDateParser();
+    private int luck;
 
     /**
      * Realiza las predicciones según la fecha de nacimiento.

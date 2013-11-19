@@ -26,7 +26,7 @@ package com.programmingchronicles.tdd.firsttest;
  * <p>
  * Implementar tests para la clase Calculator sin utilizar JUnit.</p>
  *
- * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com> <pedro@theprogrammingchronicles.com>
+ * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestCalculator {
 
@@ -34,29 +34,18 @@ public class TestCalculator {
      * TODO: Implementar el test del método add.
      */
     public void testAdd() {
-        // Ejemplo de notificación de fallo usando excepciones.
-        throw new AssertionError("testAdd failed");
     }
 
     /**
      * TODO: Implementar el test del método subtract.
      */
     public void testSubtract() {
-        // Ejemplo de notificación de fallo usando asserts nativos
-        // de java que requiren la ejecución con asserts activos "java -ea"
-        assert false : "testSubtract failed";
     }
 
     /**
      * Método main para lanzar la batería de tests.
-     * <p>
-     * Cada test se lanza en una instancia diferente siguiendo el principio
-     * <b>"Independent"</b> de las propiedades FIRST.</p>
-     *
-     * @param args
      */
     public static void main(String[] args) {
-        new TestCalculator().testAdd();
-        new TestCalculator().testSubtract();
     }
+    
 }

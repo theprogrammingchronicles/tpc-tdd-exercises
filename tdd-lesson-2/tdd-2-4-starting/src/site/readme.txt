@@ -7,7 +7,7 @@
 ${project.name} - ${project.description}
 
     Ejemplo introductorio y simplificado de aplicación del paso
-    de refactoring.
+    de refactoring. Enunciado siguiente ejercicio.
 
     * Métodos privados:
 
@@ -16,6 +16,10 @@ ${project.name} - ${project.description}
       En java se pueden testear mediante la invocación con la API de
       <reflection>. Algunas librerías ofrecen facilidades para esto.
       Pero, ¿ES NECESARIO?
+
+    * TODO: Se decide aumentar la funcionalidad del método getContact
+      de forma que devuelva una excepción cuando el contacto no existe
+      o el id es invalido.
 
 * METODOS PRIVADOS
 

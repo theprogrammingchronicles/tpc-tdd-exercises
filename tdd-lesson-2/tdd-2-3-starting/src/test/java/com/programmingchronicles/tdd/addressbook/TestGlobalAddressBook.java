@@ -30,6 +30,12 @@ import static org.junit.Assert.*;
 /**
  * Resultado despues de iterar varias veces el bucle TDD.
  *
+ * <p>Se implementan dos comportamientos, el de añadir un contacto a la
+ * agenda y el de obtener un contacto de la agenda.</p>
+ *
+ * <p>Durante la implementación del comportamiento de obtener agenda
+ * vemos necesario que el comportamiento de añadir devuelva identificadores</p>
+ *
  * <p>Se obtiene una primera aproximación que posiblemente se tenga
  * que refinar refactorizando.</p>
  *
@@ -63,8 +69,8 @@ public class TestGlobalAddressBook {
     }
 
     /**
-     * Durante la implementación de la funcionalidad se detecta que es
-     * necesario que el método de añadir devuelva identificadores.
+     * Durante la implementación de la obtener un contacto, se localiza
+     * la necesidad de que añadir contacto devuelva el id del contacto nuevo.
      */
     @Test
     public void testAddContactVerifyId() {
@@ -84,9 +90,9 @@ public class TestGlobalAddressBook {
     }
 
     /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo. Este test por tanto
-     * mejora el test anterior (que ya puede ser eliminado).
+     * Para verificar el comportamiento de obtener un sólo contacto se debe
+     * hacer uso del id generado. Este test por tanto mejora el test anterior
+     * (que incluso podría ser ya puede ser eliminado).
      */
     @Test
     public void testGetContact() {
@@ -105,7 +111,7 @@ public class TestGlobalAddressBook {
         // Ejecución del test
         Contact actual = addressBook.getContact(expectedId);
 
-        // Verificación    
+        // Verificación
         assertEquals(expectedId, actual.getId());
         assertEquals("Pedro", actual.getFirstName());
     }

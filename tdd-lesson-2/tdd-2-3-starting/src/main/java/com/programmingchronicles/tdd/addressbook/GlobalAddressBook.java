@@ -33,8 +33,14 @@ import java.util.Map;
  * <p>Se comienza la implementación de un servicio Agenda de Contactos Global
  * basado en el almacenamiento en memoria.</p>
  *
- * <p>Implementar el servicio con almacenamiento en memoria no tiene que ver 
- * con el uso de TDD, se podría empezar directamente con una implementación basada 
+ * <p>Se implementan dos comportamientos, el de añadir un contacto a la
+ * agenda y el de obtener un contacto de la agenda.</p>
+ *
+ * <p>Durante la implementación del comportamiento de obtener agenda
+ * vemos necesario que el comportamiento de añadir devuelva identificadores</p>
+ *
+ * <p>Implementar el servicio con almacenamiento en memoria no tiene que ver
+ * con el uso de TDD, se podría empezar directamente con una implementación basada
  * en base de datos. Se implementa de esta forma para simplificar los ejercicios
  * iniciales</p>
  *
@@ -56,8 +62,8 @@ public class GlobalAddressBook {
         // Se tiene que generar un id único para el contacto
         String id = Integer.toString(nextId);
         nextId++;
-        
-        contact.setId(id);                
+
+        contact.setId(id);
         addressBookMap.put(id, contact);
         return id;
     }
@@ -81,5 +87,5 @@ public class GlobalAddressBook {
      */
     public Contact getContact(String contactId) {
         return addressBookMap.get(contactId);
-    }   
+    }
 }
