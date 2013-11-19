@@ -60,8 +60,12 @@ public class TestGlobalAddressBook {
     }
 
     /**
-     * Durante la implementación de la funcionalidad se detecta que es
-     * necesario que el método de añadir devuelva identificadores.
+     * Verifica que al añadir contactos se genera un identificador
+     * unico que nos sirve para obtener contactos.
+     *
+     * Este test se implementa cuando intentamos implementar el
+     * comportamiento "getContact", entonces detectamos la necesidad
+     * de que los contactos nuevos tengan un id único asociado.
      */
     @Test
     public void testAddContactVerifyId() {
@@ -81,9 +85,11 @@ public class TestGlobalAddressBook {
     }
 
     /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo. Este test por tanto
-     * mejora el test anterior (que ya puede ser eliminado).
+     * Para verificar el comportamiento obtener contacto (getContact)
+     * se debe hacer uso del id generado.
+     *
+     * Este test por tanto mejora el test anterior (que incluso podría
+     * ser eliminado).
      */
     @Test
     public void testGetContact() {
