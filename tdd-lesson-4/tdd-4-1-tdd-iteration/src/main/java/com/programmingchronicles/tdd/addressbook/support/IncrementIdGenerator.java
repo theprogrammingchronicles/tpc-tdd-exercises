@@ -26,7 +26,7 @@ import com.programmingchronicles.tdd.addressbook.IdGenerator;
 /**
  * Implementación de IdGenerator basado en el incremento secuencial
  * de un atributo estatico.
- * 
+ *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class IncrementIdGenerator implements IdGenerator {

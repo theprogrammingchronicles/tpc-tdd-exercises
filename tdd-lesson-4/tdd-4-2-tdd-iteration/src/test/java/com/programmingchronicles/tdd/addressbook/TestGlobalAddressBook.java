@@ -21,40 +21,52 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
 import com.programmingchronicles.tdd.domain.Contact;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 import org.junit.*;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
+
 /**
  * Test de GlobalAddressBook.
+ * <p/>
+ *
+ * <pre>
+ * Se añaden más test unitarios basados en los tests de aceptación.
+ *    - Añadir un contacto completo.
+ *    - Añadir un contacto sin nombre.
+ * </pre>
+ *
+ * <p>
+ * <b>TODO:</b> Implementar el tests de añadir un contacto sin nombre.
+ * </p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestGlobalAddressBook {
 
+    private static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
+    private Contact expectedContact;
     private GlobalAddressBook addressBook;
     private IdGenerator generatorMock;
-    private Contact expectedContact;
 
     @Before
     public void setUp() {
         expectedContact = new Contact();
-        // Principio de Independencia:
-        //   Cada test tiene su propia instancia del Object Under Test y del Stub.
         addressBook = new GlobalAddressBook();
 
         // Se crea el mock automaticamente usando mockito
         generatorMock = mock(IdGenerator.class);
 
-        // Se programan varias respuestas por defecto para nextId.
-        when(generatorMock.newId()).thenReturn("1","2","3","4");
+        // Se programa una respuesta por defecto para nextId.
+        when(generatorMock.newId()).thenReturn("defaultId");
 
-        // Configura el addressBook con el mock generado.
         addressBook.setIdGenerator(generatorMock);
     }
 
@@ -66,10 +78,6 @@ public class TestGlobalAddressBook {
     public void testAddContact() {
         expectedContact.setFirstName("Pedro");
 
-        // Se puede sobreescribir la programación del stub con una
-        // nueva respuesta si el test lo necesita.
-        when(generatorMock.newId()).thenReturn("newId");
-
         // Test.
         addressBook.addContact(expectedContact);
 
@@ -77,20 +85,8 @@ public class TestGlobalAddressBook {
         List<Contact> contacts = addressBook.getAll();
         assertEquals(1, contacts.size());
         assertEquals("Pedro", contacts.get(0).getFirstName());
-
-        // También se puede hacer una validación de interacción, comprobando si
-        // realmente se ha llamado a la interfaz IdGenerator.
-        // En este caso no sería necesaria esta validación, e incluso sería
-        // conveniente no realizarla. Aunque garantiza que el id se obtiene
-        // mediante el IdGenerator, hace el test más dependiente de la
-        // implementación.
-        verify(generatorMock, times(1)).newId();
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         expectedContact.setFirstName("Pedro");
@@ -103,10 +99,6 @@ public class TestGlobalAddressBook {
         // Verificación
         assertEquals(expectedId, actual.getId());
         assertEquals("Pedro", actual.getFirstName());
-
-        // Validación por interacción de que el id se está generando
-        // el id invocando exactamente una vez la interfaz IdGenerator.
-        verify(generatorMock, times(1)).newId();
     }
 
     @Test
@@ -120,5 +112,39 @@ public class TestGlobalAddressBook {
             assertTrue(true);
         }
     }
-}
 
+    @Test
+    public void testAddFullContact() throws ParseException {
+        expectedContact.setFirstName("Pedro");
+        expectedContact.setSurname("Ballesteros");
+        Date actualBirthday = dateFormat.parse("8/1/1974");
+        expectedContact.setBirthday(actualBirthday);
+        expectedContact.setPhone("610101010");
+        addressBook.addContact(expectedContact);
+
+        List<Contact> contacts = addressBook.getAll();
+
+        assertEquals(1, contacts.size());
+        assertEquals("Pedro", contacts.get(0).getFirstName());
+        assertEquals("Ballesteros", contacts.get(0).getSurname());
+        assertEquals(actualBirthday, contacts.get(0).getBirthday());
+        assertEquals("610101010", contacts.get(0).getPhone());
+    }
+
+    /**
+     * Test que prueba que no se pueden añadir contactos sin nombre.
+     *
+     * <p>Decidimos que la forma de notificarlo será lanzando una excepción.
+     * Esto es una decisión de diseño o implementación, igual que la que podría
+     * haber sido el decidir devolver null.<p/>
+     *
+     * <p>IMPORTANTE: Despues de codificar el test hay que asegurarse que
+     *  falla, ya que estamos modificando una funcionalidad existente
+     *  (addContact).</p>
+     */
+    @Test(expected=InvalidContactException.class)
+    public void testAddWithoutFirstName() {
+        // TODO
+        fail("TODO: testAddWithoutFirstName");
+    }
+}

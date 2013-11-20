@@ -13,7 +13,7 @@
 
   <name>TDD Exercise 4.5</name>
   <description>
-        Iterating TDD driven by ATDD
+        Iterating TDD - Unit Tests Antipatterns
   </description>
 
   <developers>
@@ -24,7 +24,7 @@
       <url>http://theprogrammingchronicles.com/</url>
     </developer>
   </developers>
-  
+
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -39,4 +39,3 @@
   </dependencies>
 
 </project>
-

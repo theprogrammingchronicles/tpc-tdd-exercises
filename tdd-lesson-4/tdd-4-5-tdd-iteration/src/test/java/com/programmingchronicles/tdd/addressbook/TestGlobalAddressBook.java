@@ -21,10 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
-import com.programmingchronicles.tdd.addressbook.InvalidContactException;
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
 import com.programmingchronicles.tdd.domain.Contact;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -36,16 +32,17 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
 /**
- * Tests de GlobalAddressBook.
+ * Test de GlobalAddressBook.
  *
  * <p>
- * Ejemplo importante en {@link #testAddDuplicateNameWithNullSurname() }.</p>
+ * Ejemplo en {@link #testAddDuplicateSurname() }.</p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestGlobalAddressBook {
 
     private static DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
+
     private Contact expectedContact;
     private GlobalAddressBook addressBook;
     private IdGenerator generatorMock;
@@ -58,16 +55,16 @@ public class TestGlobalAddressBook {
         // Se crea el mock automaticamente usando mockito
         generatorMock = mock(IdGenerator.class);
 
-        // Se programa una respuesta por defecto para nextId. Se configuran 
-        // varias respuestas ya que algunos tests necesitan m�s de un contacto.
-        // Cada llamada devolver� la siguiente respuesta.
+        // Se programa una respuesta por defecto para nextId. Se configuran
+        // varias respuestas ya que algunos tests necesitan más de un contacto.
+        // Cada llamada devolverá la siguiente respuesta.
         when(generatorMock.newId()).thenReturn("0", "1", "2", "3", "4");
 
         addressBook.setIdGenerator(generatorMock);
     }
 
     /**
-     * Test que a�ade un contacto y se verifica obteniendo el contenido
+     * Test que añade un contacto y se verifica obteniendo el contenido
      * actual de la agenda.
      */
     @Test
@@ -77,26 +74,22 @@ public class TestGlobalAddressBook {
         // Test.
         addressBook.addContact(expectedContact);
 
-        // Verifica que la agenda contiene el contacto que se acaba de a�adir.
+        // Verifica que la agenda contiene el contacto que se acaba de añadir.
         List<Contact> contacts = addressBook.getAll();
         assertEquals(1, contacts.size());
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el m�todo de obtener un s�lo contacto se debe
-     * hacer uso del id generado al a�adirlo.
-     */
     @Test
     public void testGetContact() {
         expectedContact.setFirstName("Pedro");
-        // Inicializaci�n de la agenda con los datos de prueba.
+        // Inicialización de la agenda con los datos de prueba.
         String expectedId = addressBook.addContact(expectedContact);
 
-        // Ejecuci�n del test
+        // Ejecución del test
         Contact actual = addressBook.getContact(expectedId);
 
-        // Verificaci�n
+        // Verificación
         assertEquals(expectedId, actual.getId());
         assertEquals("Pedro", actual.getFirstName());
     }
@@ -111,7 +104,7 @@ public class TestGlobalAddressBook {
             // vemos el objetivo de este test.
             assertTrue(true);
         }
-    }     
+    }
 
     @Test
     public void testAddFullContact() throws ParseException {
@@ -131,20 +124,20 @@ public class TestGlobalAddressBook {
         assertEquals("610101010", contacts.get(0).getPhone());
     }
 
-    @Test(expected = InvalidContactException.class)
+    @Test(expected=InvalidContactException.class)
     public void testAddWithoutFirstName() {
         expectedContact.setSurname("Ballesteros");
         addressBook.addContact(expectedContact);
     }
 
-    @Test(expected = InvalidContactException.class)
+    @Test(expected=InvalidContactException.class)
     public void testAddBlankFirstName() {
         expectedContact.setFirstName("   ");
         expectedContact.setSurname("Ballesteros");
         addressBook.addContact(expectedContact);
     }
 
-    @Test(expected = InvalidContactException.class)
+    @Test(expected=InvalidContactException.class)
     public void testAddEmptyFirstName() {
         expectedContact.setFirstName("");
         expectedContact.setSurname("Ballesteros");
@@ -163,11 +156,11 @@ public class TestGlobalAddressBook {
         try {
             addressBook.addContact(c2);
             fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
+        } catch(InvalidContactException ex) {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
-        }      
+        }
     }
 
     @Test
@@ -182,11 +175,11 @@ public class TestGlobalAddressBook {
         try {
             addressBook.addContact(c2);
             fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
+        } catch(InvalidContactException ex) {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
-        }       
+        }
     }
 
     @Test
@@ -201,33 +194,29 @@ public class TestGlobalAddressBook {
         try {
             addressBook.addContact(c2);
             fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
+        } catch(InvalidContactException ex) {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
 
             // Decidimos que mejor almacenar los nombres sin espacios
-            // y con esto tambi�n queda testeado.
-            assertEquals("Pedro", contacts.get(0).getFirstName());         
-        }      
+            // y con esto también queda testeado.
+            assertEquals("Pedro", contacts.get(0).getFirstName());
+        }
     }
 
     /**
-     * La implementaci�n de esta funcionalidad nos muestra mas casos de prueba
-     * que no se vieron durante la elaboraci�n de los tests de aceptaci�n.
+     * Se implementa el test que valida que un contacto con el mismo
+     * nombre y el mismo apellido debe provocar un error.
      * <p/>
      *
-     * <pre>
-     * Dos indicadores que nos dicen que habr�a que implementar un test
-     * en el que se entrega null en el segundo surname para detectar duplicados.
+     * Se observa que no se trata de un buen test unitario ya que no
+     * podemos hacerlo fallar. Los test anteriores impiden que se pueda
+     * añadir un contacto con el mismo nombre sin validar el apellido.
      *
-     *  - Mientras implementamos la funcionalidad nos damos cuenta que ser�a
-     *    conveniente comprobar si surname se entrega a null.
-     *    Por tanto deber�amos parar y codificar ese test primero.
-     *
-     *  - No obstante los tests unitarios existentes ya empiezan a fallar
-     *    con excepciones NullPointerException, y esto tambi�n nos muestra
-     *    que fallaba este caso de test.
-     * </pre>
+     * <p/>
+     * Para codificar esta funcionalidad se necesita por tanto añadir
+     * el test contrario, que un contacto con el mismo nombre y diferente
+     * apellido si se puede añadir.
      */
     @Test
     public void testAddDuplicateSurname() {
@@ -243,109 +232,31 @@ public class TestGlobalAddressBook {
         try {
             addressBook.addContact(c2);
             fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
+
+        } catch(InvalidContactException ex) {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
             assertEquals("Ballesteros", contacts.get(0).getSurname());
-        }     
+        }
     }
 
     /**
-     * Este test lo hemos descubierto mientras desarrollabamos la funcionalidad
-     * que exigia el test anterior "testAddDuplicateSurname".
+     * Test para validar que un contacto con el mismo nombre pero
+     * diferente apellido si se puede añadir.
+     * <p/>
+     *
+     * El test anterior no se puede hacer fallar por lo que no ayuda
+     * a la codificación de la funcionalidad, no dirigue el desarrollo.
+     *
+     * <p/>
+     * Se implementa teniendo en cuenta que hay que evitar el
+     * antipatron de "el sequenciador" que fija el orden de los
+     * resultados (existen muchas formas diferentes de evitarlo).
      */
-    @Test
-    public void testAddDuplicateNameWithNullSurname() {
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        c1.setSurname("Ballesteros");
-
-        Contact c2 = new Contact();
-        c2.setFirstName("Pedro");
-        c2.setSurname(null);
-
-        String actualId1 = addressBook.addContact(c1);
-        String actualId2 = addressBook.addContact(c2);
-
-        // Se comprueba que se han a�adido los dos.
-        // NOTA: Esto ya lanza un error, el mock que tenemos para crear ids no
-        //       nos sirve, hay que cambiarlo ya que siempre genera el mismo.
-        // Ahora el mock se inicializa as�:
-        //       when(generatorMock.newId()).thenReturn("0", "1", "2", "3", "4");
-        List<Contact> contacts = addressBook.getAll();
-        assertEquals(2, contacts.size());
-
-        // Se verifican los contactos recibidos
-          //  assertEquals("Pedro", contacts.get(1).getFirstName());
-          //  assertEquals("Ballesteros", contacts.get(1).getSurname());
-          //  assertEquals("Pedro", contacts.get(0).getFirstName());
-          //  assertNull(contacts.get(0).getSurname());
-
-        // ANTIPATRON:
-        //  Con los asserts anteriores el test se hace fragil, se est� fijando
-        //  un orden en la respuesta.
-        //  Ningun requisito indica que getAll debe devolver alg�n orden 
-        //  determinado. Y deberiamos hacer el test independiente de que
-        //  como se implemente la construcci�n de la lista de respuesta.
-
-        // En este caso particular se est� implementando con un HashMap, por lo
-        // que el orden incluso ser� muy indeterminado.
-
-        // En este caso el assertEquals(2, contacts.size()) podr�a ser m�s que
-        // suficiente ya el m�todo addContact ya ha probado que a�ade bien
-        // todos los campos en tests anteriores.
-
-        // Pero si nos queremos asegurarnos hay dos opciones:
-        //
-        //   - Implementar el assert usando el m�todo getContact para
-        //     buscar el contacto que queremos verificar.
-        //
-        //   - O implementar una busqueda del contacto dentro del
-        //     List recibido.
-
-        // Usamos la primera opci�n, el getContact ya est� testeado.
-        Contact expectedC1 = addressBook.getContact(actualId1);
-        assertEquals("Pedro", expectedC1.getFirstName());
-        assertEquals("Ballesteros", expectedC1.getSurname());
-
-        Contact expectedC2 = addressBook.getContact(actualId2);
-        assertEquals("Pedro", expectedC2.getFirstName());
-        assertNull(expectedC2.getSurname());
-    }
-
-    /**
-     * Este test es el complementario del anterior, en este caso es el contacto
-     * existente el que tiene el apellido a null, no el nuevo.
-     */
-    @Test
-    public void testAddDuplicateNameFirstContactWithoutSurname() {
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        c1.setSurname(null);
-
-        Contact c2 = new Contact();
-        c2.setFirstName("Pedro");
-        c2.setSurname("Ballesteros");
-
-        String actualId1 = addressBook.addContact(c1);
-        String actualId2 = addressBook.addContact(c2);
-
-        List<Contact> contacts = addressBook.getAll();
-        assertEquals(2, contacts.size());
-
-        Contact expectedC1 = addressBook.getContact(actualId1);
-        assertEquals("Pedro", expectedC1.getFirstName());
-        assertNull(expectedC1.getSurname());
-
-
-        Contact expectedC2 = addressBook.getContact(actualId2);
-        assertEquals("Pedro", expectedC2.getFirstName());
-        assertEquals("Ballesteros", expectedC2.getSurname());
-    }
-
     @Test
     public void testAddDuplicateNameDifferentSurname() {
+        // Fixture
         Contact c1 = new Contact();
         c1.setFirstName("Pedro");
         c1.setSurname("Herranz");
@@ -355,11 +266,43 @@ public class TestGlobalAddressBook {
         c2.setSurname("Ballesteros");
 
         String actualId1 = addressBook.addContact(c1);
+
+        // Test
         String actualId2 = addressBook.addContact(c2);
 
+        // Verify:  Se comprueba que se han añadido los dos.
         List<Contact> contacts = addressBook.getAll();
         assertEquals(2, contacts.size());
 
+        // Se verifican los contactos recibidos
+          //  assertEquals("Pedro", contacts.get(0).getFirstName());
+          //  assertEquals("Herranz", contacts.get(0).getSurname());
+          //  assertEquals("Pedro", contacts.get(1).getFirstName());
+          //  assertEquals("Ballesteros", contacts.get(1).getSurname());
+
+        // ANTIPATRON:
+        //  Con los asserts anteriores el test se hace fragil, se está
+        //  fijando un orden en la respuesta.
+        //  Ningun requisito indica que getAll debe devolver algún orden
+        //  determinado. Y deberiamos hacer el test independiente de que
+        //  como se implemente la construcción de la lista de respuesta.
+
+        // En este caso particular se está implementando con un HashMap, por lo
+        // que el orden incluso será muy indeterminado.
+
+        // En este caso el assertEquals(2, contacts.size()) podrá ser más que
+        // suficiente ya el método addContact ya ha probado que añade bien
+        // todos los campos en tests anteriores.
+
+        // Pero si nos queremos asegurarnos hay dos opciones:
+        //
+        //   - Implementar el assert usando el método getContact para
+        //     buscar el contacto que queremos verificar.
+        //
+        //   - O implementar una busqueda del contacto dentro del
+        //     List recibido.
+
+        // Usamos la primera opción, el getContact ya está testeado.
         Contact expectedC1 = addressBook.getContact(actualId1);
         assertEquals("Pedro", expectedC1.getFirstName());
         assertEquals("Herranz", expectedC1.getSurname());
@@ -367,113 +310,5 @@ public class TestGlobalAddressBook {
         Contact expectedC2 = addressBook.getContact(actualId2);
         assertEquals("Pedro", expectedC2.getFirstName());
         assertEquals("Ballesteros", expectedC2.getSurname());
-    }
-
-    @Test
-    public void testAddDuplicateSurnameCapitalLetters() {
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        c1.setSurname("Ballesteros");
-
-        Contact c2 = new Contact();
-        c2.setFirstName("Pedro");
-        c2.setSurname("BALLESTEROS");
-
-        addressBook.addContact(c1);
-        try {
-            addressBook.addContact(c2);
-            fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
-            List<Contact> contacts = addressBook.getAll();
-            assertEquals(1, contacts.size());
-            assertEquals("Pedro", contacts.get(0).getFirstName());
-            assertEquals("Ballesteros", contacts.get(0).getSurname());
-        }       
-    }
-
-    @Test
-    public void testAddDuplicateSurnameWithBlanks() {
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        c1.setSurname(" Ballesteros "); // Un espacio
-
-        Contact c2 = new Contact();
-        c2.setFirstName("Pedro");
-        c2.setSurname("   Ballesteros   "); // Varios espacios
-
-        addressBook.addContact(c1);
-        try {
-            addressBook.addContact(c2);
-            fail("Expected InvalidContactException");
-        } catch (InvalidContactException ex) {
-            List<Contact> contacts = addressBook.getAll();
-            assertEquals(1, contacts.size());
-            assertEquals("Pedro", contacts.get(0).getFirstName());
-            assertEquals("Ballesteros", contacts.get(0).getSurname());
-        }        
-    }
-
-    @Test
-    public void testsAddDifferentNameSameData() throws ParseException {
-        Date expedtedBirthday = dateFormat.parse("8/1/1974");
-
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        c1.setSurname("Ballesteros");
-        c1.setBirthday(expedtedBirthday);
-        c1.setPhone("610101010");
-
-        Contact c2 = new Contact();
-        c2.setFirstName("Eduardo");
-        c2.setSurname("Ballesteros");
-        c2.setBirthday(expedtedBirthday);
-        c2.setPhone("610101010");
-
-        String actualId1 = addressBook.addContact(c1);
-        String actualId2 = addressBook.addContact(c2);
-
-        List<Contact> contacts = addressBook.getAll();
-        assertEquals(2, contacts.size());
-
-        Contact expectedC1 = addressBook.getContact(actualId1);
-        assertEquals("Pedro", expectedC1.getFirstName());
-        assertEquals("Ballesteros", expectedC1.getSurname());
-        assertEquals(expedtedBirthday, expectedC1.getBirthday());
-        assertEquals("610101010", expectedC1.getPhone());
-
-        Contact expectedC2 = addressBook.getContact(actualId2);
-        assertEquals("Eduardo", expectedC2.getFirstName());
-        assertEquals("Ballesteros", expectedC2.getSurname());
-        assertEquals(expedtedBirthday, expectedC2.getBirthday());
-        assertEquals("610101010", expectedC2.getPhone());
-    }
-
-    @Test
-    public void testDeleteContact()  {
-        Contact c1 = new Contact();
-        c1.setFirstName("Pedro");
-        
-        Contact c2 = new Contact();
-        c2.setFirstName("Eduardo");
-
-        // Una agenda con un solo contacto no asegura que solo se elimine
-        // ese contacto en lugar de eliminar toda la agenda.
-        String idDeleted = addressBook.addContact(c1);
-        addressBook.addContact(c2);
-
-        addressBook.deleteContact(idDeleted);
-
-        // Solo queda uno
-        assertEquals(1, addressBook.getAll().size());
-
-        // Y se ha eliminado el que se quer�a. Queda mas claro aqui
-        // que si se usa el @Test(expected=....)
-        try {
-          addressBook.getContact(idDeleted);
-          fail("InvalidIdException expected");
-        }
-        catch(InvalidIdException ex) {
-          assertTrue(true);
-        }    
     }
 }

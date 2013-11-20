@@ -6,14 +6,17 @@
 
 ${project.name} - ${project.description}
 
-    En este ejemplo se continua con la implementación del resto de los tests de
-    aceptación de la funcionalidad de <añadir contactos>.
+    Se implementa la funcionalidad especificada por el test
+    "testAddWithoutFirstName".
 
-    Se empiezan codificando los distintos test unitarios que se derivan
-    de cada uno de los test de aceptación del documento (addContact).
+    * Ejemplo de defectos relacionados con YAGNI:
 
-    * Ejemplo de defectos relacionados con YAGNI: se está implementando más
-      funcionalidad de la requerida por el tests.
+      Durante la implementación decidimos que si se está controlando
+      que firstName no puede ser null, también tiene sentido probar
+      que no entregan cadena vacía o espacios en blanco.
+
+      Estamos codificando sin haber escrito los tests por adelantado. Se
+      observa que incluso se implementa con bug que no se detectan.
 
     []
 

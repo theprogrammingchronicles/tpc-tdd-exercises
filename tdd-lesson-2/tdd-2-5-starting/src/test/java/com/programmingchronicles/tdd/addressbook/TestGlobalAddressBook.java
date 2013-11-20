@@ -65,11 +65,6 @@ public class TestGlobalAddressBook {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo. Este test por tanto
-     * mejora el test anterior (que ya puede ser eliminado).
-     */
     @Test
     public void testGetContact() {
         // Fixture: Creación de datos de prueba e inicialización del entorno
@@ -88,7 +83,7 @@ public class TestGlobalAddressBook {
 
     /**
      * Nueva funcionalidad para el método {@link GlobalAddressBook#getContact(java.lang.String) }.
-     * 
+     *
      * <p>
      * Se ha decidido que cuando se pida un contacto inexistente o no válido
      * el servicio debe devolver una excepción en lugar de null.</p>

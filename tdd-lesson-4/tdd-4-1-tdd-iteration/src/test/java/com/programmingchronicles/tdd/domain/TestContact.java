@@ -21,37 +21,57 @@
 
 package com.programmingchronicles.tdd.domain;
 
-import com.programmingchronicles.tdd.domain.Contact;
+import java.util.Date;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Tests para la clase Contact.
+ * Tests para la clase Contact. Se completan el resto de las propiedades
+ * del contacto.
  *
  * <p>
- * <b>INTERROGANTE:</b><br/>
- * ¿Es necesario crear tests para los getters y setters de un JavaBean o
- *  de métodos tan sencillos como estos?</p>
+ * Este ejemplo muestra que para no romper la encapsulación "private"
+ * de las propiedades basadas en atributo, se deben probar todas en un
+ * solo método de test. </p>
+ *
+ * <p>
+ * El método {@link #testId() } muestra un test sin errores, bien implementado,
+ * pero que no es capaz de detectar el fallo existente en esta propiedad.</p>
+ *
+ * <p>
+ * <b>PERO:</b><br/>
+ *    ¿Es necesario crear tests para los getters y setters de un JavaBean o
+ *     de métodos tan sencillos como estos?<br/><br/>
+ *    En este mismo proyecto se puede observar como la implementación erronea
+ *    de este tipo de objetos hace saltar rápidamente los tests de las clases
+ *    que usan los objetos del dominio de datos.</p>
  *
  * <p>
  * <b>RESPUESTA:</b><br/>
- * Depende de...  "Se volverá a esto en siguientes ejercicios".</p>
+ *    Depende de...</p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public class TestContact {
 
+    /**
+     * Test de la propiedad id.
+     *
+     * <p>
+     * Este test está dando ok, además no tiene errores, esta bien
+     * implementado, pero a un así no detecta que la propiedad
+     * id tiene realmente errores de implementación.</p>
+     */
     @Test
-    public void testIdProperty() {
+    public void testId() {
         Contact contact = new Contact();
 
-        contact.setId("Id");
+        contact.setId("ID");
 
         // INTERROGANTE:
         // ¿Sería correcto probar un setter mediante su getter?
         // ¿Y cuando el JavaBean tiene más de una propiedad?
-        // Se volverá a esto en siguientes ejercicios.
-        assertEquals("Id", contact.getId());
+        assertEquals("ID", contact.getId());
     }
 
     @Test
@@ -60,5 +80,44 @@ public class TestContact {
         contact.setFirstName("Pedro");
 
         assertEquals("Pedro", contact.getFirstName());
+    }
+
+    /**
+     * Test de todos los setters y getters de las propiedades.
+     *
+     * <p>
+     * El problema anterior se soluciona probando todas las propiedades
+     * en un mismo test, para no tener que acceder a atributos privados.</p>
+     *
+     * <p>
+     * En este caso no es útil la propiedad de independencia de FIRST.</p>
+     */
+    @Test
+    public void testAllProperties() {
+        // Inicialización del test object
+        Contact contact = new Contact();
+        contact.setId("id");
+        contact.setFirstName("firstName");
+        contact.setSurname("surname");
+        contact.setPhone("phone");
+        Date expectedDate = new Date();
+        contact.setBirthday(expectedDate);
+
+
+        // Aunque no conviente tener mas de un assert en cada test, en este
+        // caso es necesario.
+
+        // Es la solución al fallo no detectado en "testId"
+
+        // No tenemos acceso a los atributos, por ser private, y no queremos
+        // romper la encapsulación que proporciona OOP.
+
+        // Se establecen todas las propiedades en la misma instancia y se prueban
+        // que tienen el valor correcto usando los getters.
+        assertEquals("id", contact.getId());
+        assertEquals("firstName", contact.getFirstName());
+        assertEquals("surname", contact.getSurname());
+        assertEquals("phone", contact.getPhone());
+        assertEquals(expectedDate, contact.getBirthday());
     }
 }

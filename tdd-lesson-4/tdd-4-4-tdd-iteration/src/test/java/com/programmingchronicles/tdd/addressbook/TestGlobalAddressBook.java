@@ -21,10 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
-import com.programmingchronicles.tdd.addressbook.InvalidContactException;
 import com.programmingchronicles.tdd.domain.Contact;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -39,7 +35,7 @@ import static org.mockito.Mockito.*;
  * Test de GlobalAddressBook.
  *
  * <p>
- * Ejemplo importante en {@link #testAddDuplicateSurname() }.</p>
+ * Ejemplo en {@link #testAddDuplicateSurname() }.</p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
@@ -58,9 +54,11 @@ public class TestGlobalAddressBook {
 
         // Se crea el mock automaticamente usando mockito
         generatorMock = mock(IdGenerator.class);
-        
-        // Se programa una respuesta por defecto para nextId.
-        when(generatorMock.newId()).thenReturn("defaultId");
+
+        // Se programa una respuesta por defecto para nextId. Se configuran
+        // varias respuestas ya que algunos tests necesitan más de un contacto.
+        // Cada llamada devolverá la siguiente respuesta.
+        when(generatorMock.newId()).thenReturn("0", "1", "2", "3", "4");
 
         addressBook.setIdGenerator(generatorMock);
     }
@@ -82,10 +80,6 @@ public class TestGlobalAddressBook {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         expectedContact.setFirstName("Pedro");
@@ -166,7 +160,7 @@ public class TestGlobalAddressBook {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
-        }        
+        }
     }
 
     @Test
@@ -185,7 +179,7 @@ public class TestGlobalAddressBook {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
-        }        
+        }
     }
 
     @Test
@@ -207,26 +201,22 @@ public class TestGlobalAddressBook {
             // Decidimos que mejor almacenar los nombres sin espacios
             // y con esto también queda testeado.
             assertEquals("Pedro", contacts.get(0).getFirstName());
-        }        
+        }
     }
 
     /**
-     * La implementación de esta funcionalidad nos muestra mas casos de prueba
-     * que no se vieron durante la elaboración de los tests de aceptación.
+     * Se implementa el test que valida que un contacto con el mismo
+     * nombre y el mismo apellido debe provocar un error.
      * <p/>
      *
-     * <pre>
-     * Dos indicadores que nos dicen que habría que implementar un test
-     * en el que se entrega null en el segundo surname para detectar duplicados.
+     * Se observa que no se trata de un buen test unitario ya que no
+     * podemos hacerlo fallar. Los test anteriores impiden que se pueda
+     * añadir un contacto con el mismo nombre sin validar el apellido.
      *
-     *  - Mientras implementamos la funcionalidad nos damos cuenta que sería
-     *    conveniente comprobar si surname se entrega a null.
-     *    Por tanto deberíamos parar y codificar ese test primero.
-     *
-     *  - No obstante los tests unitarios existentes ya empiezan a fallar
-     *    con excepciones NullPointerException, y esto también nos muestra
-     *    que fallaba este caso de test.
-     * </pre>
+     * <p/>
+     * Para codificar esta funcionalidad se necesita por tanto añadir
+     * el test opuesto, que un contacto con el mismo nombre y diferente
+     * apellido si se puede añadir.
      */
     @Test
     public void testAddDuplicateSurname() {
@@ -242,11 +232,45 @@ public class TestGlobalAddressBook {
         try {
             addressBook.addContact(c2);
             fail("Expected InvalidContactException");
+
         } catch(InvalidContactException ex) {
             List<Contact> contacts = addressBook.getAll();
             assertEquals(1, contacts.size());
             assertEquals("Pedro", contacts.get(0).getFirstName());
             assertEquals("Ballesteros", contacts.get(0).getSurname());
-        }        
+        }
+    }
+
+    /**
+     * Test para validar que un contacto con el mismo nombre pero
+     * diferente apellido si se puede añadir.
+     * <p/>
+     *
+     * El test anterior no se puede hacer fallar por lo que no ayuda
+     * a la codificación de la funcionalidad, no dirigue el desarrollo.
+     *
+     * <p/>
+     * TODO: se debe completar este test, hacer fallar la funcionalidad
+     * y completar el codigo que falta en el "addContact" para hacer
+     * funcionar este test.
+     */
+    @Test
+    public void testAddDuplicateNameDifferentSurname() {
+        // Fixture
+        Contact c1 = new Contact();
+        c1.setFirstName("Pedro");
+        c1.setSurname("Herranz");
+
+        Contact c2 = new Contact();
+        c2.setFirstName("Pedro");
+        c2.setSurname("Ballesteros");
+
+        String actualId1 = addressBook.addContact(c1);
+
+        // Test
+        String actualId2 = addressBook.addContact(c2);
+
+        // Verify
+        // fail("TODO");
     }
 }

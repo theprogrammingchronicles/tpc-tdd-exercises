@@ -21,10 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
-import com.programmingchronicles.tdd.addressbook.InvalidContactException;
 import com.programmingchronicles.tdd.domain.Contact;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -63,7 +59,7 @@ public class TestGlobalAddressBook {
 
         // Se crea el mock automaticamente usando mockito
         generatorMock = mock(IdGenerator.class);
-        
+
         // Se programa una respuesta por defecto para nextId.
         when(generatorMock.newId()).thenReturn("defaultId");
 
@@ -87,10 +83,6 @@ public class TestGlobalAddressBook {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         expectedContact.setFirstName("Pedro");

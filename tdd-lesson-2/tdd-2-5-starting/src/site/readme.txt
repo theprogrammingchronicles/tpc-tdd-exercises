@@ -11,9 +11,9 @@ ${project.name} - ${project.description}
 
 * RESUMEN:
 
-    * Se implementa en el ejercicio anterior 2.4 el comportamiento que
-      devuelve una excepcion cuando se intenta obtener un contacto que
-      no existe o se usa un id invalido.
+    * Desde el ejercicio anterior (2.4) se implementa el comportamiento
+      requerido de devolver una excepcion al intentar obtener un contacto
+      que no existe o que tiene un id inválido.
 
     * Se trata de modificar la funcionalidad de un método ya existente, según
       las exigencias marcadas por nuevos tests unitarios.

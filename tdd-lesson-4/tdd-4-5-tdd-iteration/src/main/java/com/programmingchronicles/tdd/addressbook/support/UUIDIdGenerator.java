@@ -25,7 +25,7 @@ import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import java.util.UUID;
 
 /**
- * Implementaci�n de IdGenerator basado en la generaci�n de UUIDs
+ * Implementación de IdGenerator basado en la generación de UUIDs
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */

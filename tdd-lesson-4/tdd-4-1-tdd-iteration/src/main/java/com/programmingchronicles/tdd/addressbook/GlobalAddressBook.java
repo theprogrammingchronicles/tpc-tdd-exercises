@@ -78,7 +78,7 @@ public class GlobalAddressBook {
            throw new InvalidIdException();
         }
         return result;
-    }   
+    }
 
     /**
      * Obtiene el generador de ids configurado.
@@ -98,3 +98,4 @@ public class GlobalAddressBook {
         this.idGenerator = idGenerator;
     }
 }
+

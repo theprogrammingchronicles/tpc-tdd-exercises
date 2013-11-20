@@ -24,7 +24,7 @@ package com.programmingchronicles.tdd.addressbook.support;
 import com.programmingchronicles.tdd.addressbook.IdGenerator;
 
 /**
- * Implementaci�n de IdGenerator basado en el incremento secuencial
+ * Implementación de IdGenerator basado en el incremento secuencial
  * de un atributo estatico.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>

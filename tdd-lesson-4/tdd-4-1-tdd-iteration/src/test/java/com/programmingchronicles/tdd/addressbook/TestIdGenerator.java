@@ -21,7 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import org.junit.*;
 import static org.junit.Assert.*;
 
@@ -29,13 +28,13 @@ import static org.junit.Assert.*;
  * Clase Abstracta para test de implementaciones de IdGenerator.
  *
  * <p>
- * <b>Refactorización:</b><br/>
  *   Clase base con tests que ejecutan las pruebas comunes de cualquier
- *   implementación de IdGenerator.</p>
+ *   implementación de IdGenerator.
+ * </p>
  *
  * <p>
- * Como es una clase abstracta no se lanzará ninguno de sus tests, pero
- * las clases derivadas heredarán estos tests y se lanzarán todos para cada una.
+ *  Como es una clase abstracta no se lanzará ninguno de sus tests, pero
+ *  las clases derivadas heredarán estos tests y se lanzarán todos para cada una.
  * </p>
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>

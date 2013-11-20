@@ -6,12 +6,21 @@
 
 ${project.name} - ${project.description}
 
-    * <<Refactorización>> de tests.
+    * Se completa la implementación del objeto de datos del dominio <Contact>.
 
-      Ejemplo de agrupación de tests para una interfaz genérica (IdGenerator),
-      eliminando código repetido, y reutilizando los tests para las implementaciones
-      específicas (IncrementalIdGenerator / UUIDIdGenerator).
+    []
 
-    * Herencia de tests desde clases abstractas.
+    * Test de propiedades de objetos de datos (setters / getters).
 
- 
+      * Propiedades basadas en atributo o generadas.
+
+      * ¿Son realmente necesarios estos tests?
+
+    []
+
+    * ¿Se pueden testear las propiedades un objeto de datos de forma completa
+       sin romper la encapsulación private que ofrece OOP?.
+
+    []
+
+    * Ejemplo de test erróneo que lanza falsos oks.

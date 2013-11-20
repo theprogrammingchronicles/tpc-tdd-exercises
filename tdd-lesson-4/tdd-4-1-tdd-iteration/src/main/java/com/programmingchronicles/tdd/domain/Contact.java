@@ -21,6 +21,8 @@
 
 package com.programmingchronicles.tdd.domain;
 
+import java.util.Date;
+
 /**
  * JavaBean que implementa la clase Contact del modelo de datos del dominio.
  *
@@ -30,13 +32,24 @@ public class Contact {
 
     private String id;
     private String firstName;
+    private String surname;
+    private String phone;
+    private Date birthday;
 
     public String getId() {
-        return id;
+        return firstName;
     }
 
     public void setId(String id) {
-        this.id = id;
+        this.firstName = id;
+    }
+
+    public Date getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
     }
 
     public String getFirstName() {
@@ -45,5 +58,21 @@ public class Contact {
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

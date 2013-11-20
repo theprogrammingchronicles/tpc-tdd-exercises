@@ -21,7 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook.support;
 
-import com.programmingchronicles.tdd.addressbook.support.UUIDIdGenerator;
 import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import org.junit.*;
 import static org.junit.Assert.*;
@@ -71,9 +70,9 @@ public class TestUUIDIdGenerator {
     }
 
     @Test
-    public void testNewIdDifferentInstances() {       
+    public void testNewIdDifferentInstances() {
         String oldId = new UUIDIdGenerator().newId();
-       
+
         for (int i = 0; i < 10; i++) {
             String newId = new UUIDIdGenerator().newId();
             assertFalse(oldId.equals(newId));

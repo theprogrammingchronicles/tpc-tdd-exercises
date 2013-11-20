@@ -17,9 +17,10 @@ ${project.name} - ${project.description}
       <reflection>. Algunas librerías ofrecen facilidades para esto.
       Pero, ¿ES NECESARIO?
 
-    * TODO: Se decide aumentar la funcionalidad del método getContact
-      de forma que devuelva una excepción cuando el contacto no existe
-      o el id es invalido.
+    * TODO: Tras esta refactorización se propone el ejercicio de aumentar
+      la funcionalidad de getContact, para devolver una excepción cuando
+      el contacto no existe o el id es inválido.
+
 
 * METODOS PRIVADOS
 

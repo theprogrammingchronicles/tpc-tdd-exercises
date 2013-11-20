@@ -6,21 +6,17 @@
 
 ${project.name} - ${project.description}
 
-    * Se completa la implementación del objeto de datos del dominio <Contact>.
+    Se continua con la implementación del resto de los tests de
+    aceptación de la funcionalidad de <añadir contactos>.
 
-    []
+    Se siguen codificando test unitarios basados en los tests de
+    aceptacion disponibles.
 
-    * Test de propiedades de objetos de datos (setters / getters).
+    Se implementan el test y la funcionalidad de añadir un contacto
+    con todos sus datos completos.
 
-      * Propiedades basadas en atributo o generadas.
+* TO DO:
 
-      * ¿Son realmente necesarios estos tests?
-
-    []
-
-    * ¿Se pueden testear las propiedades un objeto de datos de forma completa
-       sin romper la encapsulación private que ofrece OOP?.
-
-    []
-
-    * Ejemplo de test erróneo que lanza falsos oks.
+    Implementar el tests unitario que permite implementar la funcionalidad
+    de impedir que se puedan añadir contactos sin nombres (única propiedad
+    obligatoria de los contactos).

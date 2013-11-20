@@ -21,7 +21,6 @@
 
 package com.programmingchronicles.tdd.addressbook.support;
 
-import com.programmingchronicles.tdd.addressbook.support.IncrementIdGenerator;
 import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import org.junit.*;
 import static org.junit.Assert.*;

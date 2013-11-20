@@ -26,7 +26,7 @@ import com.programmingchronicles.tdd.addressbook.TestIdGenerator;
 import com.programmingchronicles.tdd.addressbook.IdGenerator;
 
 /**
- * Test que dirigir� la implementaci�n de un IdGenerator basado en
+ * Test que dirigirá la implementación de un IdGenerator basado en
  * en el incremento de un atributo estatico.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>

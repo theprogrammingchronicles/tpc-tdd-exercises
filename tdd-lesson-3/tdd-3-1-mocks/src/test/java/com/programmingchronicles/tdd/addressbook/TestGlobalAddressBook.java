@@ -18,11 +18,8 @@
  * along with this material. This copy is available in LICENSE-GPL.txt
  * file. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.GlobalAddressBook;
-import com.programmingchronicles.tdd.addressbook.InvalidIdException;
 import com.programmingchronicles.tdd.domain.Contact;
 import java.util.List;
 import org.junit.Test;
@@ -50,7 +47,10 @@ import static org.junit.Assert.*;
  * <p>
  * <b>TO DO:</b><br/>
  *    Modificar los tests para que puedan funcionar sin disponer aun
- *    de la clasa IdGenerator.<br/>
+ *    de la clasa IdGenerator. En la clase GlobalAddressBook se ha
+ *    eliminado el código de generación de IDs que ahora debe ser
+ *    implementado por una dependencia.<br/>
+ *
  *    ¿Como se puede hacer que GlobalAddressBook utilice durante los tests un
  *     Mock de IdGenerator sin incluir el Mock en la implementación del código
  *     funcional?
@@ -82,10 +82,6 @@ public class TestGlobalAddressBook {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         // Fixture: Creación de datos de prueba e inicialización del entorno

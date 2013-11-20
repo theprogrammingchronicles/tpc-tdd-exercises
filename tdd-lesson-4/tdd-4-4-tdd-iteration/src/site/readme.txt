@@ -15,13 +15,16 @@ ${project.name} - ${project.description}
       <<IMPORTANTE>>: Los Test de Aceptación no deben limitar el numero de tests
                       que necesitamos para aplicar TDD.
 
-    * La aplicación iterativa del bucle TDD hace que tests ya existentes
-      comiencen a fallar. En este ejemplo se trata de funcionalidad a corregir.
+    * Aparición de tests que tests que no se pueden hacer fallar para poder
+      implementar nueva funcionalidad.
 
-    []
+      <<Ver>>: testAddDuplicateSurname
 
-    * Los nuevos tests aparecen de forma natural debido a necesidades que se
-      van encontrando durante la implementación o la refactorización, o por
-      fallos en tests que anteriormente funcionaban.
+      Ejemplo de test que no se puede hacer fallar, ya que el código
+      existente no tiene en cuenta apellidos, para poder implementar
+      esta funcionalidad primero es necesario implementar la funcionalidad
+      opuesta.
 
-      (<<Ver>>: testAddDuplicateSurname)
+      Es necesario implementar el test que verifica que si se pueden
+      añadir dos contactos con el mismo nombre.
+

@@ -35,19 +35,19 @@ import static org.junit.Assert.*;
  * Este ejemplo muestra como mantener tests de integración en una batería de tests
  * independientes dentro del mismo proyecto. Se ejecutan en la fase final "verify"
  * para probar sobre el paquete ya generado.</p>
- * 
+ *
  * <p>
  * Esta división por baterías también se puede aplicar a tests que se vuelven
  * demasiado pesados y solo se ejecutan en cada commit, y no en cada iteración
  * del bucle TDD. Aunque este tipo de tests conviene evitarlos.</p>
- * 
+ *
  * <p>
  * <b>Proyectos para Test de Integración</b><br/>
  *    En un ejemplo posterior se verá que los tests de integración más complejos
  *    se pueden o se deben mantener en un proyecto independiente, ya que los tests
  *    quedan más separados de los detalles de implementación. Las pruebas se realizan
  *    sin tener acceso directo al código fuente.</p>
- * 
+ *
  * <p>
  * <b>NOTA</b><br/>
  * En este caso no sería necesario mantener estos tests independientes, ya que
@@ -93,10 +93,6 @@ public class ITAddressBookWithIncrementIdGenerator {
         assertEquals("Pedro", contacts.get(0).getFirstName());
     }
 
-    /**
-     * Para verificar el método de obtener un sólo contacto se debe
-     * hacer uso del id generado al añadirlo.
-     */
     @Test
     public void testGetContact() {
         Contact expectedContact = new Contact();

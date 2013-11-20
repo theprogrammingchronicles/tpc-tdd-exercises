@@ -17,15 +17,6 @@ ${project.name} - ${project.description}
 
 * RESUMEN
 
-    * Refactorización de tests: eliminación de código de test repetido mediante la
-      agrupación en clases de test abstractas.
-
-    []
-
-    * Test de interfaces genéricas y de implementaciones concretas.
-
-    []
-
     * Test de propiedades de objetos de datos (JavaBean setters / getters),
 
       ¿Son realmente necesarios estos tests? ¿Se pueden testear de forma completa
@@ -44,7 +35,7 @@ ${project.name} - ${project.description}
       antes de haber implementado el test que la verifica.
 
       Es fácil incluso no darse cuenta y dejar finalmente código sin testear,
-      y en cualquier caso estaríamos usando TAD (Test Afeter Development).
+      y en cualquier caso estaríamos usando TAD (Test After Development).
 
     * Nueva funcionalidad que rompe tests ya existentes.
 

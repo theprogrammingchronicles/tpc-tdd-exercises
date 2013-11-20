@@ -21,7 +21,6 @@
 
 package com.programmingchronicles.tdd.domain;
 
-import com.programmingchronicles.tdd.domain.Contact;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

@@ -42,10 +42,12 @@ public class GlobalAddressBook {
     private IdGenerator idGenerator;
 
     /**
-     * Añade un nuevo contacto devolviendo el id generado.
+     * Añade un nuevo contacto devolviendo el id generado. El nombre
+     * del contacto es obligatorio, si no se entrega se lanza una excepción.
      *
      * @param contact Datos del contacto a añadir
      * @return Devuelve el id asignado al contacto
+     * @throws InvalidContactException
      */
     public String addContact(Contact contact) {
         String id = idGenerator.newId();
