@@ -22,16 +22,16 @@
 package com.programmingchronicles.tdd.addressbook;
 
 /**
- * Interfaz del servicio de generaci�n de ids.
+ * Interfaz del servicio de generación de ids.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public interface IdGenerator {
 
     /**
-     * Devuelve un nuevo identificador �nico cada vez que se invoca
+     * Devuelve un nuevo identificador único cada vez que se invoca
      *
-     * @return identificador �nico generado.
+     * @return identificador único generado.
      */
     public String newId();
 }

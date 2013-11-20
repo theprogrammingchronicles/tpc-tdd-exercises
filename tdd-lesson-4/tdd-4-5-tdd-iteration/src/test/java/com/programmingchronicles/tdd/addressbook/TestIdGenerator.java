@@ -21,23 +21,22 @@
 
 package com.programmingchronicles.tdd.addressbook;
 
-import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import org.junit.*;
 import static org.junit.Assert.*;
 
 /**
  * Clase base con tests que ejecutan las pruebas comunes de cualquier
- * implementaci�n de IdGenerator.
+ * implementación de IdGenerator.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */
 public abstract class TestIdGenerator {
 
     /**
-     * Se debe sobreescribir para obtener la implementaci�n de IdGenerator
+     * Se debe sobreescribir para obtener la implementación de IdGenerator
      * que se quiere testear.
      *
-     * @return Implementaci�n de IdGenerator
+     * @return Implementación de IdGenerator
      */
     protected abstract IdGenerator newIdGenerator();
 
@@ -47,7 +46,7 @@ public abstract class TestIdGenerator {
 
         String oldId = idGenerator.newId();
         // Se prueba que siempre se genera un id nuevo
-        // �cuantas veces se prueba?
+        // ¿cuantas veces se prueba?
         for(int i=0; i < 10; i++) {
             String newId = idGenerator.newId();
             assertFalse(oldId.equals(newId));
@@ -62,7 +61,7 @@ public abstract class TestIdGenerator {
         String oldId = newIdGenerator().newId();
 
         // Se prueba que siempre se genera un id nuevo
-        // �cuantas veces se prueba?
+        // ¿cuantas veces se prueba?
         for(int i=0; i < 10; i++) {
             String newId = newIdGenerator().newId();
             assertFalse(oldId.equals(newId));

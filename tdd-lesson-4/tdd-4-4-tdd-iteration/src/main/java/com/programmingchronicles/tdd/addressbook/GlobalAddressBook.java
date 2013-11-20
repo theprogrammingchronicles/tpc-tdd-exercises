@@ -53,13 +53,19 @@ public class GlobalAddressBook {
         // Nombre obligatorio teniendo en cuenta espacios antes y despues.
         if(contact.getFirstName() == null || contact.getFirstName().trim().length() < 1) {
            throw new InvalidContactException();
-        }       
+        }
 
         // Para comprobar duplicados de contactos por nombre, decidimos que
         // quitamos directamente los espacios para siguientes operaciones.
         contact.setFirstName(contact.getFirstName().trim());
-        if(checkDuplicate(contact)) {
-           throw new InvalidContactException();
+
+        // Busca si ya existe un contacto con el mismo nombre
+        String firstName = contact.getFirstName();
+        for(Contact existingContact: addressBookMap.values()) {
+            String existingFirstName = existingContact.getFirstName();
+            if(firstName.equalsIgnoreCase(existingFirstName)) {
+               throw new InvalidContactException();
+            }
         }
 
         String id = idGenerator.newId();
@@ -68,7 +74,7 @@ public class GlobalAddressBook {
         addressBookMap.put(id, contact);
         return id;
     }
-    
+
     /**
      * Obtiene todos los contactos del sistema.
      *
@@ -92,26 +98,6 @@ public class GlobalAddressBook {
            throw new InvalidIdException();
         }
         return result;
-    }        
-
-    // Método privado obtenido por refactorización. Este método será
-    // testeado indirectamente.
-    private boolean checkDuplicate(Contact checkedContact) {
-        String checkedFirstName = checkedContact.getFirstName();
-        String checkedSurname = checkedContact.getSurname();
-
-        for(Contact contact: addressBookMap.values()) {
-            String firstName = contact.getFirstName();
-            String surname = contact.getSurname();
-
-            // El contacto esta repetido si conincide en nombre y apellido, al
-            // añadir el apellido en la comprobación, saltan otros tests y vemos
-            // un caso de tests que no teniamos contemplado.
-            if(checkedFirstName.equalsIgnoreCase(firstName) && checkedSurname.equals(surname)) {
-               return true;
-            }
-        }
-        return false;
     }
 
     /**

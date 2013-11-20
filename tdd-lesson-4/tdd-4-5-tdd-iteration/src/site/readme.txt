@@ -6,14 +6,11 @@
 
 ${project.name} - ${project.description}
 
-   Se terminan varias funcionalidades del AddressBook, aplicando
-   varias veces el ciclo iterativo TDD, dirigido por los tests
-   de aceptación.
+   Se implementa el cÃ³digo de testAddDuplicateNameDifferentSurname.
 
-     * Ejemplo de antipatron:
+   * Ejemplo de antipatron:
 
-       Comprobar elementos de una lista prefijando un orden
-       (<testAddDuplicateNameWithNullSurname>)
+    Antipatron "secuenciador", fijar el orden de los resultados
+    al realizar la verificaciÃ³n (<testAddDuplicateSurname>).
 
-     * Ejemplo de configuración de un mock que genera varias
-       respuesta sucesivas diferentes.
+

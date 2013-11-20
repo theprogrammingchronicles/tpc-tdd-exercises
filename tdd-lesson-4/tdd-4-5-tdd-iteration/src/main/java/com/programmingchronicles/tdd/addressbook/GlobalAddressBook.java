@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Implementaci�n de un servicio Agenda de Contactos Global
+ * Implementación de un servicio Agenda de Contactos Global
  * basado en el almacenamiento en memoria.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
@@ -37,30 +37,35 @@ public class GlobalAddressBook {
 
     private Map<String, Contact> addressBookMap = new HashMap();
 
-    // Acceso al servicio de generaci�n de ids, que se configurar�
+    // Acceso al servicio de generación de ids, que se configurará
     // mediante Direct Injection (IoC).
     private IdGenerator idGenerator;
 
     /**
-     * A�ade un nuevo contacto devolviendo el id generado.
+     * Añade un nuevo contacto devolviendo el id generado. El nombre
+     * del contacto es obligatorio, si no se entrega se lanza una excepción.
      *
-     * @param contact Datos del contacto a a�adir
+     * @param contact Datos del contacto a añadir
      * @return Devuelve el id asignado al contacto
+     * @throws InvalidContactException
      */
     public String addContact(Contact contact) {
+        // Nombre obligatorio teniendo en cuenta espacios antes y despues.
         if(contact.getFirstName() == null || contact.getFirstName().trim().length() < 1) {
            throw new InvalidContactException();
-        }       
-
-        // Se decide eliminar aqui los espacios del apellido y nombre
-        // para comprobar duplicados: "Ya hay tests especificos de esto".
-        contact.setFirstName(contact.getFirstName().trim());
-        if(contact.getSurname() != null) {
-           contact.setSurname(contact.getSurname().trim());
         }
-           
-        if(checkDuplicate(contact)) {
-           throw new InvalidContactException();
+
+        // Para comprobar duplicados de contactos por nombre, decidimos que
+        // quitamos directamente los espacios para siguientes operaciones.
+        contact.setFirstName(contact.getFirstName().trim());
+
+        // Busca si ya existe un contacto con el mismo nombre
+        String firstName = contact.getFirstName();
+        for(Contact existingContact: addressBookMap.values()) {
+            String existingFirstName = existingContact.getFirstName();
+            if(firstName.equalsIgnoreCase(existingFirstName)) {
+               throw new InvalidContactException();
+            }
         }
 
         String id = idGenerator.newId();
@@ -93,29 +98,6 @@ public class GlobalAddressBook {
            throw new InvalidIdException();
         }
         return result;
-    }      
-
-    public void deleteContact(String id) {
-        addressBookMap.remove(id);
-    }
-
-    private boolean checkDuplicate(Contact checkedContact) {
-        String checkedFirstName = checkedContact.getFirstName();
-        String checkedSurname = checkedContact.getSurname();
-
-        for(Contact contact: addressBookMap.values()) {
-            String firstName = contact.getFirstName();
-            String surname = contact.getSurname();
-
-            if(checkedFirstName.equalsIgnoreCase(firstName)) {
-                if(checkedSurname != null) {
-                   return checkedSurname.equalsIgnoreCase(surname);
-                } else if(surname == null) {
-                   return true;
-                }
-            }
-        }
-        return false;
     }
 
     /**

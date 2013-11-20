@@ -60,6 +60,9 @@
     <module>tdd-4-3-tdd-iteration</module>
     <module>tdd-4-4-tdd-iteration</module>
     <module>tdd-4-5-tdd-iteration</module>
+    <module>tdd-4-6-tdd-iteration</module>
+    <module>tdd-4-7-tdd-iteration</module>
+    <module>tdd-4-8-tdd-iteration</module>
   </modules>
 
 </project>

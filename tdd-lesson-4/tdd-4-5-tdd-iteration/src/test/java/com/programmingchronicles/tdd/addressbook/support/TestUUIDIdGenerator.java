@@ -26,8 +26,8 @@ import com.programmingchronicles.tdd.addressbook.IdGenerator;
 import com.programmingchronicles.tdd.addressbook.TestIdGenerator;
 
 /**
- * Test que dirige la implementaci�n de un IdGenerator basado en
- * la generaci�n de UUIDs.
+ * Test que dirige la implementación de un IdGenerator basado en
+ * la generación de UUIDs.
  *
  * @author Pedro Ballesteros <pedro@theprogrammingchronicles.com>
  */

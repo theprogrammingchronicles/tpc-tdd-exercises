@@ -17,15 +17,6 @@ ${project.name} - ${project.description}
 
 * RESUMEN
 
-    * Refactorización de tests: eliminación de código de test repetido mediante la
-      agrupación en clases de test abstractas.
-
-    []
-
-    * Test de interfaces genéricas y de implementaciones concretas.
-
-    []
-
     * Test de propiedades de objetos de datos (JavaBean setters / getters),
 
       ¿Son realmente necesarios estos tests? ¿Se pueden testear de forma completa

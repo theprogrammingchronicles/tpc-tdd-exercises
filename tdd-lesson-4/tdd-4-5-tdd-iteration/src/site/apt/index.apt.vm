@@ -6,14 +6,22 @@
 
 ${project.name} - ${project.description}
 
-   Se terminan varias funcionalidades del AddressBook, aplicando
-   varias veces el ciclo iterativo TDD, dirigido por los tests
-   de aceptaci髇.
+    * Aparici贸n de nuevos tests:
 
-     * Ejemplo de antipatron:
+      Desde los tests de aceptaci贸n van apareciendo tests unitarios no
+      contemplados inicialmente, debido a necesidades detectadas durante
+      la implementaci贸n (ahora se usa el vocabulario de la implementaci贸n).
 
-       Comprobar elementos de una lista prefijando un orden
-       (<testAddDuplicateNameWithNullSurname>)
+      <<IMPORTANTE>>: Los Test de Aceptaci贸n no deben limitar el numero de tests
+                      que necesitamos para aplicar TDD.
 
-     * Ejemplo de configuraci髇 de un mock que genera varias
-       respuesta sucesivas diferentes.
+    * La aplicaci贸n iterativa del bucle TDD hace que tests ya existentes
+      comiencen a fallar. En este ejemplo se trata de funcionalidad a corregir.
+
+    []
+
+    * Los nuevos tests aparecen de forma natural debido a necesidades que se
+      van encontrando durante la implementaci贸n o la refactorizaci贸n, o por
+      fallos en tests que anteriormente funcionaban.
+
+      (<<Ver>>: testAddDuplicateSurname)
